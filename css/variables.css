@@ -1,0 +1,55 @@
+/* ==========================
+   Google Font Variables
+========================== */
+
+:root {
+
+    /* Colors */
+    --primary: #6DB8D4;
+    --primary-dark: #3E8FB0;
+
+    --secondary: #7B2D42;
+
+    --accent: #F8E8A6;
+
+    --white: #FFFFFF;
+    --background: #F9FBFC;
+
+    --text: #1F2937;
+    --text-light: #6B7280;
+
+    --border: rgba(0,0,0,.08);
+
+    /* Glass */
+    --glass: rgba(255,255,255,.55);
+
+    /* Shadows */
+    --shadow-sm: 0 5px 15px rgba(0,0,0,.08);
+
+    --shadow-md: 0 15px 35px rgba(0,0,0,.12);
+
+    --shadow-lg: 0 30px 60px rgba(0,0,0,.18);
+
+    /* Radius */
+
+    --radius-sm: 10px;
+
+    --radius-md: 18px;
+
+    --radius-lg: 30px;
+
+    /* Transition */
+
+    --transition: .35s ease;
+
+    /* Container */
+
+    --container: 1200px;
+
+    /* Fonts */
+
+    --heading-font: "Cormorant Garamond", serif;
+
+    --body-font: "Poppins", sans-serif;
+
+}

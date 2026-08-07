@@ -1,0 +1,207 @@
+/* ===================================
+   GLOBAL RESET
+=================================== */
+
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:var(--body-font);
+    background:var(--background);
+    color:var(--text);
+    line-height:1.7;
+    overflow-x:hidden;
+}
+
+/* ===================================
+   TYPOGRAPHY
+=================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-family:var(--heading-font);
+    font-weight:700;
+    color:var(--text);
+    line-height:1.2;
+}
+
+h1{
+    font-size:4rem;
+}
+
+h2{
+    font-size:3rem;
+}
+
+h3{
+    font-size:2rem;
+}
+
+p{
+    color:var(--text-light);
+    margin-top:1rem;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+ul{
+    list-style:none;
+}
+
+button,
+input,
+textarea{
+    font-family:inherit;
+}
+
+/* ===================================
+   CONTAINER
+=================================== */
+
+.container{
+    width:min(90%, var(--container));
+    margin:auto;
+}
+
+/* ===================================
+   SECTION
+=================================== */
+
+section{
+    padding:100px 0;
+}
+
+/* ===================================
+   BUTTON
+=================================== */
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:.6rem;
+
+    padding:14px 32px;
+
+    border:none;
+    border-radius:50px;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color:#fff;
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+    font-weight:600;
+
+    box-shadow:var(--shadow-sm);
+}
+
+.btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:var(--shadow-md);
+
+}
+
+/* ===================================
+   SECTION TITLE
+=================================== */
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:60px;
+
+}
+
+.section-title span{
+
+    color:var(--secondary);
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+
+    font-size:.9rem;
+
+    font-weight:600;
+
+}
+
+.section-title h2{
+
+    margin-top:10px;
+
+}
+
+/* ===================================
+   GLASS CARD
+=================================== */
+
+.glass{
+
+    background:var(--glass);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.3);
+
+    border-radius:var(--radius-md);
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+/* ===================================
+   UTILITIES
+=================================== */
+
+.text-center{
+    text-align:center;
+}
+
+.mt-2{
+    margin-top:20px;
+}
+
+.mt-4{
+    margin-top:40px;
+}
+
+.mb-2{
+    margin-bottom:20px;
+}
+
+.mb-4{
+    margin-bottom:40px;
+}
