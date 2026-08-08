@@ -46,6 +46,10 @@
 
     --container: 1200px;
 
+    /* Header height (used for scroll-margin-top) */
+
+    --header-h: 90px;
+
     /* Fonts */
 
     --heading-font: "Cormorant Garamond", serif;

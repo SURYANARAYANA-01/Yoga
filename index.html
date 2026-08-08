@@ -1,134 +1,1156 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Arivukadal Sky Yoga</title>
+    <title>Arivukadal Sky Yoga — Traditional Yoga for All Ages</title>
+    <meta name="description" content="Arivukadal Sky Yoga offers traditional yoga, meditation and holistic wellness classes for children, adults and seniors. Morning, evening, weekend and special program batches available.">
+    <meta name="keywords" content="yoga, meditation, kids yoga, pranayama, Suryanamaskar, Introspection, Kayakalpam, Brahmagnyanam, holistic wellness">
+    <meta property="og:title" content="Arivukadal Sky Yoga">
+    <meta property="og:description" content="Traditional yoga and meditation for all ages — children, adults and seniors.">
+    <meta property="og:type" content="website">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/spa.css">
     <link rel="stylesheet" href="css/responsive.css">
 </head>
 
 <body>
 
-    <!-- Background -->
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
+    <!-- Background blobs -->
+    <div class="blobs-container">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
 
-    <!-- HEADER -->
-    <header class="header">
+    <!-- Mobile nav overlay -->
+    <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
 
+    <!-- ===================================================
+         HEADER
+    =================================================== -->
+    <header class="header" id="siteHeader">
         <div class="container">
+            <nav class="navbar" aria-label="Main navigation">
 
-            <nav class="navbar">
-
-                <a href="index.html" class="logo">
-
-                    <div class="logo-placeholder">
-                        LOGO
-                    </div>
-
+                <a href="#home" class="logo" aria-label="Arivukadal Sky Yoga — go to top">
+                    <div class="logo-placeholder">LOGO</div>
                 </a>
 
-                <ul class="nav-links">
-
-                    <li><a href="index.html" class="active">Home</a></li>
-
-                    <li><a href="about.html">About</a></li>
-
-                    <li><a href="classes.html">Classes</a></li>
-
-                    <li><a href="timetable.html">Timetable</a></li>
-
-                    <li><a href="gallery.html">Gallery</a></li>
-
-                    <li><a href="pricing.html">Pricing</a></li>
-
-                    <li><a href="blog.html">Blog</a></li>
-
-                    <li><a href="contact.html">Contact</a></li>
-
+                <ul class="nav-links" id="navLinks" role="list">
+                    <li><a href="#home"      data-section="home"      class="active">Home</a></li>
+                    <li><a href="#about"     data-section="about">About</a></li>
+                    <li><a href="#classes"   data-section="classes">Classes</a></li>
+                    <li><a href="#timetable" data-section="timetable">Timetable</a></li>
+                    <li><a href="#gallery"   data-section="gallery">Gallery</a></li>
+                    <li><a href="#pricing"   data-section="pricing">Pricing</a></li>
+                    <li><a href="#reviews"   data-section="reviews">Reviews</a></li>
+                    <li><a href="#blog"      data-section="blog">Blog</a></li>
+                    <li><a href="#contact"   data-section="contact">Contact</a></li>
                 </ul>
 
+                <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
             </nav>
-
         </div>
-
     </header>
-
-    <!-- HERO -->
 
     <main>
 
-        <section class="hero">
-
+        <!-- ===================================================
+             #home — HERO
+        =================================================== -->
+        <section id="home" class="hero">
             <div class="container hero-grid">
 
                 <div class="hero-content">
+                    <span class="hero-tag">Welcome to Arivukadal Sky Yoga</span>
 
-                    <span class="hero-tag">
-                        Welcome to Arivukadal Sky Yoga
-                    </span>
-
-                    <h1>
-                        Find Your Inner Peace
-                    </h1>
+                    <h1>Find Your<br>Inner Peace</h1>
 
                     <p>
                         Reconnect your body, mind and soul through traditional yoga,
-                        meditation and holistic wellness practices.
+                        meditation and holistic wellness — for children, adults and seniors alike.
                     </p>
 
                     <div class="hero-buttons">
-
-                        <a href="booking.html" class="btn">
-                            Book a Class
-                        </a>
-
-                        <a href="classes.html" class="btn-outline">
-                            Explore Classes
-                        </a>
-
+                        <a href="#contact" class="btn" id="heroBookBtn">Book a Class</a>
+                        <a href="#classes" class="btn-outline" id="heroExploreBtn">Explore Classes</a>
                     </div>
 
-                    <div class="trust-box">
-                        500+ Happy Students
+                    <div class="trust-box">🌟 500+ Happy Students Across All Age Groups</div>
+                </div>
+
+                <div class="hero-image">
+                    <div class="image-placeholder">
+                        <h3>Hero Image</h3>
+                        <p>Client image will be placed here</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===================================================
+             #about — ABOUT
+        =================================================== -->
+        <section id="about">
+            <div class="container">
+
+                <!-- Section title -->
+                <div class="section-title reveal">
+                    <span>About Us</span>
+                    <h2>Discover the Journey to Inner Peace</h2>
+                </div>
+
+                <!-- Our Story -->
+                <div class="about-story-grid reveal">
+                    <div class="about-img-wrap">
+                        <div class="about-img-placeholder">
+                            <span class="ph-icon">🧘</span>
+                            <p>Story Image</p>
+                        </div>
+                    </div>
+                    <div class="about-text">
+                        <span class="section-eyebrow">Our Story</span>
+                        <h2>Rooted in Tradition, Growing with You</h2>
+                        <p>
+                            Arivukadal Sky Yoga was founded with a clear vision: to help every person —
+                            from a curious seven-year-old to a senior seeking gentle movement — discover
+                            a healthier, more peaceful life through authentic yoga and meditation.
+                        </p>
+                        <p>
+                            Our programs blend ancient wisdom with practical, age-appropriate techniques
+                            that improve physical health, mental clarity and emotional balance. Whether
+                            you are a student managing exam stress, a working professional chasing calm,
+                            or an elder seeking strength and stillness, you will find your place here.
+                        </p>
+                        <ul class="about-checklist">
+                            <li>Traditional Yoga &amp; Meditation Practices</li>
+                            <li>Classes for Children, Adults &amp; Senior Practitioners</li>
+                            <li>Holistic Wellness &amp; Healthy Lifestyle Guidance</li>
+                            <li>Experienced &amp; Caring Instructors</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Mission & Vision -->
+                <div class="mv-section" style="margin-top:80px; padding:60px 30px; border-radius:var(--radius-lg);">
+                    <div class="section-title reveal">
+                        <span>Our Purpose</span>
+                        <h2>Mission &amp; Vision</h2>
+                    </div>
+                    <div class="mv-grid reveal">
+                        <div class="mv-card glass">
+                            <span class="mv-icon">🎯</span>
+                            <h3>Our Mission</h3>
+                            <p>
+                                To inspire individuals of every age to achieve physical, mental and spiritual
+                                well-being through authentic yoga education and holistic practices — making
+                                wellness accessible to children, adults and seniors equally.
+                            </p>
+                        </div>
+                        <div class="mv-card glass">
+                            <span class="mv-icon">🌅</span>
+                            <h3>Our Vision</h3>
+                            <p>
+                                To become a trusted wellness centre where families and communities embrace
+                                yoga as a lifelong way of living — building healthier, calmer and more
+                                mindful generations, one practice at a time.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Why Choose Us -->
+                <div class="section-title reveal" style="margin-top:80px;">
+                    <span>Why Choose Us</span>
+                    <h2>Experience the Difference</h2>
+                </div>
+                <div class="why-grid reveal">
+                    <div class="why-card glass">
+                        <span class="why-icon">🏅</span>
+                        <h3>Certified Guidance</h3>
+                        <p>Experienced instructors devoted to your personal growth at every stage of life.</p>
+                    </div>
+                    <div class="why-card glass">
+                        <span class="why-icon">🌿</span>
+                        <h3>Holistic Wellness</h3>
+                        <p>Programs that nurture physical strength, mental clarity and emotional balance together.</p>
+                    </div>
+                    <div class="why-card glass">
+                        <span class="why-icon">🧒</span>
+                        <h3>Kid-Friendly</h3>
+                        <p>Safe, playful and age-appropriate sessions designed specifically for children aged 7–18.</p>
+                    </div>
+                    <div class="why-card glass">
+                        <span class="why-icon">🕐</span>
+                        <h3>Flexible Timings</h3>
+                        <p>Morning, afternoon, evening and weekend batches so yoga fits into any schedule.</p>
+                    </div>
+                    <div class="why-card glass">
+                        <span class="why-icon">☮️</span>
+                        <h3>Peaceful Environment</h3>
+                        <p>A calm, welcoming space that makes every student — young or old — feel at ease.</p>
+                    </div>
+                    <div class="why-card glass">
+                        <span class="why-icon">🤝</span>
+                        <h3>Community Support</h3>
+                        <p>Grow alongside like-minded seekers who support and inspire each other every day.</p>
+                    </div>
+                </div>
+
+                <!-- Founder Message -->
+                <div class="founder-section" style="margin-top:80px;">
+                    <div class="about-story-grid reverse reveal">
+                        <div class="about-img-wrap">
+                            <div class="about-img-placeholder">
+                                <span class="ph-icon">🙏</span>
+                                <p>Founder Photo</p>
+                            </div>
+                        </div>
+                        <div class="about-text">
+                            <span class="section-eyebrow">From the Founder</span>
+                            <h2>A Message of Gratitude</h2>
+                            <blockquote class="founder-quote">
+                                "Yoga is not just about flexibility or posture.
+                                 It is a journey toward understanding yourself and living a meaningful life —
+                                 no matter your age or starting point."
+                            </blockquote>
+                            <p class="founder-name">— Founder, Arivukadal Sky Yoga</p>
+                            <p>
+                                We welcome every student — a curious child exploring their first sun salutation,
+                                a busy adult rediscovering their breath, or a senior finding gentle strength —
+                                as a valued member of our growing family.
+                            </p>
+                            <a href="#contact" class="btn" style="margin-top:20px;">Begin Your Journey</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===================================================
+             #classes — CLASSES
+        =================================================== -->
+        <section id="classes">
+            <div class="container">
+
+                <div class="section-title reveal">
+                    <span>Our Classes</span>
+                    <h2>Practice with Purpose</h2>
+                </div>
+                <p class="text-center reveal" style="max-width:700px;margin:0 auto 60px;">
+                    Every class at Arivukadal Sky Yoga is designed to improve flexibility, strength,
+                    breathing, concentration and overall well-being — for children (7–18), working-age
+                    adults and older practitioners.
+                </p>
+
+                <!-- Regular Weekday Batches -->
+                <h3 class="subsection-title reveal">Regular Weekday Batches</h3>
+                <div class="batches-grid reveal">
+
+                    <div class="batch-card glass">
+                        <span class="batch-icon">🌅</span>
+                        <h3>Morning Yoga</h3>
+                        <span class="batch-time">6:00 AM – 8:00 AM</span>
+                        <p>Start your day energised with breathing exercises, Suryanamaskar and meditation. Ideal for all adults and senior practitioners.</p>
+                        <ul>
+                            <li>Pranayama</li>
+                            <li>Suryanamaskar</li>
+                            <li>Meditation</li>
+                            <li>All ages welcome</li>
+                        </ul>
+                    </div>
+
+                    <div class="batch-card glass">
+                        <span class="batch-icon">☀️</span>
+                        <h3>Afternoon Yoga</h3>
+                        <span class="batch-time">10:00 AM – 11:00 AM</span>
+                        <p>A calmer mid-day session with gentle stretching, relaxation and mindfulness — perfect for those with flexible morning schedules.</p>
+                        <ul>
+                            <li>Gentle Stretching</li>
+                            <li>Relaxation</li>
+                            <li>Mindfulness</li>
+                            <li>Adults &amp; Seniors</li>
+                        </ul>
+                    </div>
+
+                    <div class="batch-card glass">
+                        <span class="batch-icon">🧒</span>
+                        <h3>Kids Yoga (Evening)</h3>
+                        <span class="batch-time">4:00 PM – 5:00 PM</span>
+                        <p>Fun, engaging sessions crafted for children aged 7–18. Builds focus, confidence, flexibility and healthy daily habits after school.</p>
+                        <ul>
+                            <li>Fun Activities</li>
+                            <li>Balance Training</li>
+                            <li>Healthy Habits</li>
+                            <li>Ages 7–18</li>
+                        </ul>
+                    </div>
+
+                    <div class="batch-card glass">
+                        <span class="batch-icon">🌙</span>
+                        <h3>Adults Yoga (Evening)</h3>
+                        <span class="batch-time">6:30 PM – 8:00 PM</span>
+                        <p>Decompress after a long day with stress-relief poses, pranayama and calming meditation — ideal for working professionals and middle-aged adults.</p>
+                        <ul>
+                            <li>Stress Relief</li>
+                            <li>Strength &amp; Flexibility</li>
+                            <li>Mindfulness</li>
+                            <li>Adults &amp; Seniors</li>
+                        </ul>
                     </div>
 
                 </div>
 
-                <div class="hero-image">
+                <!-- Weekend Batches -->
+                <div class="weekend-block reveal">
+                    <h3 class="subsection-title">Weekend Batches (Saturday &amp; Sunday)</h3>
+                    <div class="weekend-grid">
 
-                    <div class="image-placeholder">
+                        <div class="weekend-card glass">
+                            <span class="weekend-who">Children Only · Ages 7–18</span>
+                            <h3>Weekend Kids Yoga</h3>
+                            <span class="batch-time">7:00 AM – 8:30 AM</span>
+                            <p>An extended weekend session for young practitioners — combining yoga postures, breathing games and group activities to build lifelong wellness habits.</p>
+                        </div>
 
-                        <h3>Hero Image</h3>
+                        <div class="weekend-card glass">
+                            <span class="weekend-who">Adults Only</span>
+                            <h3>Weekend Adults Yoga</h3>
+                            <span class="batch-time">6:00 AM – 8:00 AM</span>
+                            <p>An energising weekend practice for adults and seniors — deeper Suryanamaskar sequences, pranayama and guided meditation to prepare you for the week ahead.</p>
+                        </div>
 
-                        <p>
-                            Client image will be placed here
-                        </p>
+                    </div>
+                </div>
 
+                <!-- Special Programs -->
+                <h3 class="subsection-title reveal">Special Programs</h3>
+                <div class="programs-grid reveal">
+
+                    <div class="program-card glass">
+                        <span class="program-icon">✨</span>
+                        <h3>Kayakalpam</h3>
+                        <p>A rejuvenating 3-hour daily program for deep bodily and mental renewal through traditional techniques.</p>
+                    </div>
+
+                    <div class="program-card glass">
+                        <span class="program-icon">🌱</span>
+                        <h3>12-Day Foundation Class</h3>
+                        <p>A comprehensive 12-day introduction to classical yoga — perfect for beginners of all ages laying a strong foundation.</p>
+                    </div>
+
+                    <div class="program-card glass">
+                        <span class="program-icon">🔍</span>
+                        <h3>Introspection I</h3>
+                        <p>A focused 2-day residential-style day program (10:00 AM – 4:00 PM) exploring self-awareness and inner stillness.</p>
+                    </div>
+
+                    <div class="program-card glass">
+                        <span class="program-icon">🔍</span>
+                        <h3>Introspection II</h3>
+                        <p>Continuing the journey inward — a 2-day day program (10:00 AM – 4:00 PM) building on Introspection I foundations.</p>
+                    </div>
+
+                    <div class="program-card glass">
+                        <span class="program-icon">🔍</span>
+                        <h3>Introspection III</h3>
+                        <p>The advanced chapter of self-discovery — a 2-day day program (10:00 AM – 4:00 PM) for dedicated practitioners.</p>
+                    </div>
+
+                    <div class="program-card glass">
+                        <span class="program-icon">🌟</span>
+                        <h3>Brahmagnyanam</h3>
+                        <p>A 4-day intensive program exploring the deeper wisdom traditions and spiritual dimensions of yoga.</p>
+                    </div>
+
+                    <div class="program-card glass">
+                        <span class="program-icon">🧒</span>
+                        <h3>Kids Class</h3>
+                        <p>Dedicated yoga sessions crafted to nurture flexibility, focus and emotional balance in children aged 7–18.</p>
+                    </div>
+
+                    <div class="program-card glass">
+                        <span class="program-icon">🏕️</span>
+                        <h3>Students Camp</h3>
+                        <p>A vibrant summer holiday camp for children — combining yoga, games and wellness practices in a fun, structured format.</p>
+                    </div>
+
+                    <div class="program-card glass">
+                        <span class="program-icon">💨</span>
+                        <h3>Pranayama</h3>
+                        <p>Dedicated breathing science sessions to improve lung capacity, calm the nervous system and sharpen mental focus.</p>
+                    </div>
+
+                    <div class="program-card glass">
+                        <span class="program-icon">💪</span>
+                        <h3>Exercises</h3>
+                        <p>Structured physical conditioning routines complementing yoga practice for overall strength and stamina.</p>
+                    </div>
+
+                    <div class="program-card glass">
+                        <span class="program-icon">🌞</span>
+                        <h3>Suryanamaskar</h3>
+                        <p>The complete Sun Salutation practice — 12-step dynamic sequences that energise the whole body and mind.</p>
                     </div>
 
                 </div>
 
             </div>
+        </section>
 
+        <!-- ===================================================
+             #timetable — TIMETABLE
+        =================================================== -->
+        <section id="timetable">
+            <div class="container">
+
+                <div class="section-title reveal">
+                    <span>Weekly Timetable</span>
+                    <h2>Choose the Perfect Time for Your Practice</h2>
+                </div>
+
+                <!-- Full weekly grid -->
+                <div class="timetable-scroll reveal">
+                    <table class="schedule-table" role="table" aria-label="Weekly class timetable">
+                        <thead>
+                            <tr>
+                                <th scope="col">Day</th>
+                                <th scope="col">Morning Yoga</th>
+                                <th scope="col">Afternoon Yoga</th>
+                                <th scope="col">Kids (Evening)</th>
+                                <th scope="col">Adults (Evening)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="day-cell">Monday</td>
+                                <td>6:00 – 8:00 AM</td>
+                                <td>10:00 – 11:00 AM</td>
+                                <td>4:00 – 5:00 PM</td>
+                                <td>6:30 – 8:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td class="day-cell">Tuesday</td>
+                                <td>6:00 – 8:00 AM</td>
+                                <td>10:00 – 11:00 AM</td>
+                                <td>4:00 – 5:00 PM</td>
+                                <td>6:30 – 8:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td class="day-cell">Wednesday</td>
+                                <td>6:00 – 8:00 AM</td>
+                                <td>10:00 – 11:00 AM</td>
+                                <td>4:00 – 5:00 PM</td>
+                                <td>6:30 – 8:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td class="day-cell">Thursday</td>
+                                <td>6:00 – 8:00 AM</td>
+                                <td>10:00 – 11:00 AM</td>
+                                <td>4:00 – 5:00 PM</td>
+                                <td>6:30 – 8:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td class="day-cell">Friday</td>
+                                <td>6:00 – 8:00 AM</td>
+                                <td>10:00 – 11:00 AM</td>
+                                <td>4:00 – 5:00 PM</td>
+                                <td>6:30 – 8:00 PM</td>
+                            </tr>
+                            <tr class="weekend-row">
+                                <td class="day-cell">Saturday</td>
+                                <td>Adults — 6:00 – 8:00 AM</td>
+                                <td>—</td>
+                                <td>Children — 7:00 – 8:30 AM</td>
+                                <td>—</td>
+                            </tr>
+                            <tr class="weekend-row">
+                                <td class="day-cell">Sunday</td>
+                                <td>Adults — 6:00 – 8:00 AM</td>
+                                <td>—</td>
+                                <td>Children — 7:00 – 8:30 AM</td>
+                                <td>—</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Batch timing cards -->
+                <div class="section-title reveal" style="margin-top:80px;">
+                    <span>Daily Sessions</span>
+                    <h2>Choose Your Preferred Batch</h2>
+                </div>
+                <div class="batch-timing-grid reveal">
+                    <div class="batch-timing-card glass">
+                        <span class="timing-icon-lg">🌅</span>
+                        <h3>Morning</h3>
+                        <span class="time-badge">6:00 – 8:00 AM</span>
+                        <p>Begin your day with energising yoga, breathing exercises and meditation.</p>
+                    </div>
+                    <div class="batch-timing-card glass">
+                        <span class="timing-icon-lg">☀️</span>
+                        <h3>Afternoon</h3>
+                        <span class="time-badge">10:00 – 11:00 AM</span>
+                        <p>Gentle stretching and mindful relaxation to refresh your body mid-day.</p>
+                    </div>
+                    <div class="batch-timing-card glass">
+                        <span class="timing-icon-lg">🧒</span>
+                        <h3>Kids Evening</h3>
+                        <span class="time-badge">4:00 – 5:00 PM</span>
+                        <p>Fun-filled yoga activities that improve focus, confidence and flexibility.</p>
+                    </div>
+                    <div class="batch-timing-card glass">
+                        <span class="timing-icon-lg">🌙</span>
+                        <h3>Adults Evening</h3>
+                        <span class="time-badge">6:30 – 8:00 PM</span>
+                        <p>End your day with calming yoga, meditation and stress-relief practices.</p>
+                    </div>
+                </div>
+
+                <!-- Note block for day programs -->
+                <div class="timetable-note glass reveal">
+                    <h3>📋 Special Program Schedule Notes</h3>
+                    <ul>
+                        <li><strong>Introspection I</strong> — 2-day day program, 10:00 AM to 4:00 PM</li>
+                        <li><strong>Introspection II</strong> — 2-day day program, 10:00 AM to 4:00 PM</li>
+                        <li><strong>Introspection III</strong> — 2-day day program, 10:00 AM to 4:00 PM</li>
+                        <li>All day programs include <strong>Morning Tea, Lunch and Evening Tea</strong> — fully catered</li>
+                        <li>Day programs are <strong>non-residential</strong> — no overnight stay is currently offered</li>
+                        <li>Contact us for upcoming dates of special programs</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===================================================
+             #gallery — GALLERY
+        =================================================== -->
+        <section id="gallery">
+            <div class="container">
+
+                <div class="section-title reveal">
+                    <span>Our Gallery</span>
+                    <h2>Moments of Peace &amp; Wellness</h2>
+                </div>
+                <p class="text-center reveal" style="max-width:620px;margin:0 auto 40px;">
+                    Real photographs will be added here. For now, explore the categories and
+                    imagine the peaceful moments that await you.
+                </p>
+
+                <!-- Filter buttons -->
+                <div class="filter-buttons reveal" role="group" aria-label="Gallery category filters">
+                    <button class="filter-btn active" data-filter="all"         id="filterAll">All</button>
+                    <button class="filter-btn"         data-filter="yoga"       id="filterYoga">Yoga Classes</button>
+                    <button class="filter-btn"         data-filter="meditation" id="filterMed">Meditation</button>
+                    <button class="filter-btn"         data-filter="events"     id="filterEvents">Events</button>
+                    <button class="filter-btn"         data-filter="kids"       id="filterKids">Kids Yoga</button>
+                    <button class="filter-btn"         data-filter="camp"       id="filterCamp">Summer Camp</button>
+                </div>
+
+                <!-- Gallery grid -->
+                <div class="gallery-grid reveal" id="galleryGrid">
+
+                    <div class="gallery-item span-2" data-category="yoga">
+                        <div class="gallery-ph">
+                            <span class="gallery-ph-icon">🧘</span>
+                            <p>Morning Yoga Session</p>
+                            <span class="gallery-label">Yoga Classes</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item span-row" data-category="meditation">
+                        <div class="gallery-ph">
+                            <span class="gallery-ph-icon">🪷</span>
+                            <p>Meditation Circle</p>
+                            <span class="gallery-label">Meditation</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="kids">
+                        <div class="gallery-ph">
+                            <span class="gallery-ph-icon">🧒</span>
+                            <p>Kids Practice</p>
+                            <span class="gallery-label">Kids Yoga</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="yoga">
+                        <div class="gallery-ph">
+                            <span class="gallery-ph-icon">🌅</span>
+                            <p>Sunrise Suryanamaskar</p>
+                            <span class="gallery-label">Yoga Classes</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="events">
+                        <div class="gallery-ph">
+                            <span class="gallery-ph-icon">🎉</span>
+                            <p>Community Event</p>
+                            <span class="gallery-label">Events</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="camp">
+                        <div class="gallery-ph">
+                            <span class="gallery-ph-icon">🏕️</span>
+                            <p>Summer Camp 2025</p>
+                            <span class="gallery-label">Summer Camp</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="meditation">
+                        <div class="gallery-ph">
+                            <span class="gallery-ph-icon">🌿</span>
+                            <p>Evening Meditation</p>
+                            <span class="gallery-label">Meditation</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="kids">
+                        <div class="gallery-ph">
+                            <span class="gallery-ph-icon">🌈</span>
+                            <p>Kids Fun Yoga</p>
+                            <span class="gallery-label">Kids Yoga</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="yoga">
+                        <div class="gallery-ph">
+                            <span class="gallery-ph-icon">💪</span>
+                            <p>Strength Poses</p>
+                            <span class="gallery-label">Yoga Classes</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="events">
+                        <div class="gallery-ph">
+                            <span class="gallery-ph-icon">🪷</span>
+                            <p>Wellness Workshop</p>
+                            <span class="gallery-label">Events</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="camp">
+                        <div class="gallery-ph">
+                            <span class="gallery-ph-icon">☀️</span>
+                            <p>Camp Activities</p>
+                            <span class="gallery-label">Summer Camp</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===================================================
+             #pricing — PRICING
+        =================================================== -->
+        <section id="pricing">
+            <div class="container">
+
+                <div class="section-title reveal">
+                    <span>Pricing</span>
+                    <h2>Invest in Your Well-being</h2>
+                </div>
+
+                <div class="lunch-banner reveal">
+                    <span>🍽️</span>
+                    <p style="margin:0;color:inherit;">
+                        <strong>Lunch is included in all programs</strong> — day programs also include morning tea and evening tea at no extra charge.
+                    </p>
+                </div>
+
+                <div class="pricing-grid reveal">
+
+                    <!-- 12-Day Foundation -->
+                    <div class="pricing-card glass">
+                        <span class="pricing-tag">All Ages</span>
+                        <h3>12-Day Foundation Class</h3>
+                        <p class="pricing-meta">12 days · Complete beginner program</p>
+                        <div class="pricing-amount">₹2,000</div>
+                        <p class="pricing-notes">
+                            A comprehensive introduction to classical yoga practice. Ideal for anyone starting their yoga journey — children, adults or seniors.
+                        </p>
+                        <div class="payment-slot" data-program="foundation-12day"></div>
+                    </div>
+
+                    <!-- Kayakalpam -->
+                    <div class="pricing-card glass">
+                        <span class="pricing-tag">All Ages</span>
+                        <h3>Kayakalpam</h3>
+                        <p class="pricing-meta">3 hours/day · Duration as scheduled</p>
+                        <div class="pricing-amount">₹500</div>
+                        <p class="pricing-notes">
+                            Traditional bodily and mental rejuvenation through ancient Kayakalpa techniques — a deeply restorative experience.
+                        </p>
+                        <div class="payment-slot" data-program="kayakalpam"></div>
+                    </div>
+
+                    <!-- Brahmagnyanam -->
+                    <div class="pricing-card glass featured">
+                        <span class="pricing-tag">Adults &amp; Seniors</span>
+                        <h3>Brahmagnyanam</h3>
+                        <p class="pricing-meta">4 days · Intensive program</p>
+                        <div class="pricing-amount">₹2,600</div>
+                        <p class="pricing-notes">
+                            A profound 4-day journey into the deeper wisdom traditions and spiritual dimensions of yoga. Suitable for serious practitioners.
+                        </p>
+                        <div class="payment-slot" data-program="brahmagnyanam"></div>
+                    </div>
+
+                    <!-- Introspection I -->
+                    <div class="pricing-card glass">
+                        <span class="pricing-tag">All Ages</span>
+                        <h3>Introspection I</h3>
+                        <p class="pricing-meta">2 days · 10:00 AM – 4:00 PM</p>
+                        <div class="pricing-amount">₹800</div>
+                        <p class="pricing-notes">
+                            A focused 2-day day program exploring self-awareness and inner stillness. Includes morning tea, lunch and evening tea.
+                        </p>
+                        <div class="payment-slot" data-program="introspection-1"></div>
+                    </div>
+
+                    <!-- Introspection II -->
+                    <div class="pricing-card glass">
+                        <span class="pricing-tag">Introspection I Alumni</span>
+                        <h3>Introspection II</h3>
+                        <p class="pricing-meta">2 days · 10:00 AM – 4:00 PM</p>
+                        <div class="pricing-amount">₹800</div>
+                        <p class="pricing-notes">
+                            Builds on Introspection I — a deeper 2-day exploration of inner presence and awareness. Includes meals.
+                        </p>
+                        <div class="payment-slot" data-program="introspection-2"></div>
+                    </div>
+
+                    <!-- Introspection III -->
+                    <div class="pricing-card glass">
+                        <span class="pricing-tag">Introspection II Alumni</span>
+                        <h3>Introspection III</h3>
+                        <p class="pricing-meta">2 days · 10:00 AM – 4:00 PM</p>
+                        <div class="pricing-amount">₹800</div>
+                        <p class="pricing-notes">
+                            The advanced chapter — a 2-day immersive self-discovery program for dedicated practitioners. Includes meals.
+                        </p>
+                        <div class="payment-slot" data-program="introspection-3"></div>
+                    </div>
+
+                    <!-- Students Camp -->
+                    <div class="pricing-card glass">
+                        <span class="pricing-tag">Kids Only · Ages 7–18</span>
+                        <h3>Students Camp</h3>
+                        <p class="pricing-meta">Summer holiday camp</p>
+                        <div class="pricing-amount">₹2,000</div>
+                        <p class="pricing-notes">
+                            A vibrant summer camp for children combining yoga, wellness games and group activities. Builds lifelong healthy habits.
+                        </p>
+                        <div class="payment-slot" data-program="students-camp"></div>
+                    </div>
+
+                    <!-- Kids All Programs -->
+                    <div class="pricing-card glass">
+                        <span class="pricing-tag">Kids Only · Ages 7–18</span>
+                        <h3>Kids — All Programs Package</h3>
+                        <p class="pricing-meta">Full program access</p>
+                        <div class="pricing-amount">₹2,000</div>
+                        <p class="pricing-notes">
+                            Access to all kids-specific programs at one bundled price. The best value for parents enrolling children in multiple offerings.
+                        </p>
+                        <div class="payment-slot" data-program="kids-all-programs"></div>
+                    </div>
+
+                    <!-- Kids Weekend -->
+                    <div class="pricing-card glass">
+                        <span class="pricing-tag">Kids Only · Ages 7–18</span>
+                        <h3>Kids — Weekend Batch</h3>
+                        <p class="pricing-meta">1 month · Saturday &amp; Sunday only</p>
+                        <div class="pricing-amount">₹800</div>
+                        <p class="pricing-notes">
+                            Weekend-only yoga for children (Sat &amp; Sun, 7:00 – 8:30 AM). Perfect for school-goers who can only commit on weekends.
+                        </p>
+                        <div class="payment-slot" data-program="kids-weekend"></div>
+                    </div>
+
+                    <!-- Kids Regular -->
+                    <div class="pricing-card glass">
+                        <span class="pricing-tag">Kids Only · Ages 7–18</span>
+                        <h3>Kids — Regular Batch</h3>
+                        <p class="pricing-meta">1 month · Monday to Friday</p>
+                        <div class="pricing-amount">₹1,000</div>
+                        <p class="pricing-notes">
+                            Weekday evening sessions (4:00 – 5:00 PM) for children. A consistent daily practice that builds discipline and inner strength.
+                        </p>
+                        <div class="payment-slot" data-program="kids-regular"></div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===================================================
+             #reviews — REVIEWS
+        =================================================== -->
+        <section id="reviews">
+            <div class="container">
+
+                <!-- ── Header block ── -->
+                <div class="reviews-header reveal">
+                    <h2 class="reviews-main-heading">Don't just take our word for it,</h2>
+                    <p class="reviews-subline">Hear from our students.</p>
+                    <p class="reviews-muted">Our students' experiences speak for themselves.</p>
+                </div>
+
+                <!-- ── Rating summary bar (always visible) ── -->
+                <div class="rating-summary-bar glass reveal" id="ratingSummaryBar" aria-label="Overall rating summary">
+                    <div class="summary-left">
+                        <span class="rating-tier-word" id="ratingTier">Welcome</span>
+                        <span class="summary-divider" aria-hidden="true">·</span>
+                        <span class="summary-studio-name">Arivukadal Sky Yoga</span>
+                        <div class="summary-stars-track" aria-hidden="true">
+                            <span class="summary-stars-bg">★★★★★</span>
+                            <span class="summary-stars-fg" id="summaryStarsFg" style="width:100%;">★★★★★</span>
+                        </div>
+                        <span class="summary-avg-number" id="summaryAvg">5.0</span>
+                        <span class="summary-count-text" id="summaryCountText">Be the first one to write a review</span>
+                    </div>
+                    <div class="summary-right">
+                        <button type="button" class="btn summary-write-btn open-review-modal-btn" id="writeReviewBtn">✍️ Write a Review</button>
+                    </div>
+                </div>
+
+                <!-- ── Loading state ── -->
+                <div class="reviews-loading" id="reviewsLoading" aria-live="polite">Loading reviews…</div>
+
+                <!-- ── Empty state (zero reviews) ── -->
+                <div class="reviews-empty-state" id="reviewsEmptyState" style="display:none;">
+                    <span class="empty-state-icon">🌟</span>
+                    <h3>No reviews yet — be the first!</h3>
+                    <p>Be the first to share your experience at Arivukadal Sky Yoga.</p>
+                </div>
+
+                <!-- ── Error / No Credentials state ── -->
+                <div class="reviews-error-state" id="reviewsErrorState" style="display:none;">
+                    <p id="reviewsErrorText">⚙️ Reviews will appear here once Supabase credentials are configured.</p>
+                </div>
+
+                <!-- ── 4-column review cards grid ── -->
+                <div class="reviews-grid" id="reviewsGrid" style="display:none;" aria-label="Student reviews"></div>
+
+            </div>
+        </section>
+
+        <!-- ── Review Modal Popup ── -->
+        <div class="review-modal-overlay" id="reviewModal" aria-hidden="true">
+            <div class="review-modal-card glass" role="dialog" aria-labelledby="modalTitle" aria-modal="true">
+                <button type="button" class="modal-close-btn" id="closeReviewModal" aria-label="Close modal">&times;</button>
+                <div class="review-form-header">
+                    <h3 id="modalTitle">Share Your Experience</h3>
+                    <p>Practised with us? We'd love to hear from you.</p>
+                </div>
+
+                <form id="reviewForm" novalidate class="review-form-fields-wrap">
+                    <label for="reviewName" class="form-label">Your Name *</label>
+                    <input
+                        type="text"
+                        id="reviewName"
+                        name="name"
+                        placeholder="e.g. Priya Sharma"
+                        maxlength="80"
+                        required
+                        autocomplete="name">
+
+                    <!-- Star Rating Widget -->
+                    <span class="star-rating-label">Your Rating *</span>
+                    <div class="star-rating-widget" role="radiogroup" aria-label="Star rating, 1 to 5">
+                        <input type="radio" id="star5" name="rating" value="5">
+                        <label for="star5" title="5 stars — Excellent" tabindex="0" role="radio" aria-label="5 stars">★</label>
+
+                        <input type="radio" id="star4" name="rating" value="4">
+                        <label for="star4" title="4 stars — Very Good" tabindex="0" role="radio" aria-label="4 stars">★</label>
+
+                        <input type="radio" id="star3" name="rating" value="3">
+                        <label for="star3" title="3 stars — Good" tabindex="0" role="radio" aria-label="3 stars">★</label>
+
+                        <input type="radio" id="star2" name="rating" value="2">
+                        <label for="star2" title="2 stars — Fair" tabindex="0" role="radio" aria-label="2 stars">★</label>
+
+                        <input type="radio" id="star1" name="rating" value="1">
+                        <label for="star1" title="1 star — Poor" tabindex="0" role="radio" aria-label="1 star">★</label>
+                    </div>
+                    <div class="review-form-error" id="ratingError">Please select a rating.</div>
+
+                    <label for="reviewComment" class="form-label">Your Review *</label>
+                    <textarea
+                        id="reviewComment"
+                        name="comment"
+                        rows="4"
+                        placeholder="Tell others about your experience at Arivukadal Sky Yoga…"
+                        maxlength="500"
+                        required></textarea>
+                    <p class="char-hint"><span id="charCount">0</span>/500 characters</p>
+
+                    <div class="review-form-error" id="formError">Please fill in all fields correctly.</div>
+
+                    <button type="submit" class="btn" id="reviewSubmitBtn">
+                        Submit Review
+                    </button>
+                </form>
+
+                <div class="review-success-msg" id="reviewSuccessMsg" style="display:none;">
+                    <span>✓</span> Thank you! Your review has been submitted successfully.
+                </div>
+            </div>
+        </div>
+
+        <!-- ===================================================
+             #blog — BLOG
+        =================================================== -->
+        <section id="blog">
+            <div class="container">
+
+                <div class="section-title reveal">
+                    <span>Blog</span>
+                    <h2>Insights from Our Practice</h2>
+                </div>
+
+                <div class="blog-grid reveal">
+
+                    <article class="blog-card glass">
+                        <div class="blog-thumb">🧘</div>
+                        <div class="blog-body">
+                            <div class="blog-meta">
+                                <span class="blog-tag">Wellness</span>
+                                <span>August 2026</span>
+                            </div>
+                            <h3>Why Every Child Benefits from Yoga</h3>
+                            <p class="blog-excerpt">
+                                From improved focus during exams to better sleep and emotional resilience —
+                                discover why introducing yoga early creates lifelong well-being for children aged 7–18.
+                            </p>
+                            <a href="#blog" class="blog-read-more">Read More →</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-card glass">
+                        <div class="blog-thumb">💨</div>
+                        <div class="blog-body">
+                            <div class="blog-meta">
+                                <span class="blog-tag">Pranayama</span>
+                                <span>July 2026</span>
+                            </div>
+                            <h3>5 Pranayama Techniques to Start Your Morning</h3>
+                            <p class="blog-excerpt">
+                                Breathing is life's most fundamental act — yet most of us do it wrong.
+                                Explore five pranayama techniques that transform your mornings and sharpen your mind.
+                            </p>
+                            <a href="#blog" class="blog-read-more">Read More →</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-card glass">
+                        <div class="blog-thumb">🌅</div>
+                        <div class="blog-body">
+                            <div class="blog-meta">
+                                <span class="blog-tag">Suryanamaskar</span>
+                                <span>June 2026</span>
+                            </div>
+                            <h3>Suryanamaskar: A Complete Practice for All Ages</h3>
+                            <p class="blog-excerpt">
+                                The 12-step Sun Salutation is one of yoga's most complete sequences.
+                                Learn how seniors, adults and young students can adapt it to their needs and abilities.
+                            </p>
+                            <a href="#blog" class="blog-read-more">Read More →</a>
+                        </div>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===================================================
+             #contact — CONTACT
+        =================================================== -->
+        <section id="contact">
+            <div class="container">
+
+                <div class="section-title reveal">
+                    <span>Get in Touch</span>
+                    <h2>Contact Us</h2>
+                </div>
+
+                <div class="contact-layout">
+
+                    <!-- Info panel -->
+                    <div class="contact-info-box glass reveal">
+                        <h3>Contact Information</h3>
+
+                        <div class="contact-detail">
+                            <div class="contact-detail-icon">📞</div>
+                            <div class="contact-detail-text">
+                                <h4>Founder</h4>
+                                <a href="tel:+918754513113">8754513113</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail">
+                            <div class="contact-detail-icon">📞</div>
+                            <div class="contact-detail-text">
+                                <h4>Co-Founder</h4>
+                                <a href="tel:+918884887795">8884887795</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail">
+                            <div class="contact-detail-icon">✉️</div>
+                            <div class="contact-detail-text">
+                                <h4>Email</h4>
+                                <a href="mailto:info@arivukadalskyyoga.com">info@arivukadalskyyoga.com</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail">
+                            <div class="contact-detail-icon">🕐</div>
+                            <div class="contact-detail-text">
+                                <h4>Business Hours</h4>
+                                <p>Monday – Sunday</p>
+                                <p>6:00 AM – 8:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact form -->
+                    <div class="contact-form-box glass reveal">
+                        <h3>Send a Message via WhatsApp</h3>
+                        <p>Your message will be sent directly to your chosen contact — no middleman, instant delivery.</p>
+
+                        <!-- Recipient picker -->
+                        <div class="recipient-picker" role="group" aria-label="Choose message recipient">
+                            <label class="recipient-option selected" id="founderLabel">
+                                <input type="radio" name="recipient" id="recipientFounder" value="918754513113" checked>
+                                📞 Founder
+                            </label>
+                            <label class="recipient-option" id="cofounderLabel">
+                                <input type="radio" name="recipient" id="recipientCofounder" value="918884887795">
+                                📞 Co-Founder
+                            </label>
+                        </div>
+
+                        <form id="contactForm" novalidate>
+                            <div class="contact-form-fields">
+                                <div class="form-row">
+                                    <input type="text"  id="contactName"    name="name"    placeholder="Full Name *"     required maxlength="80" autocomplete="name">
+                                    <input type="tel"   id="contactPhone"   name="phone"   placeholder="Phone Number *"  required maxlength="15" autocomplete="tel">
+                                </div>
+                                <input type="email" id="contactEmail"   name="email"   placeholder="Email Address *"  required maxlength="100" autocomplete="email">
+                                <input type="text"  id="contactSubject" name="subject" placeholder="Subject *"         required maxlength="120">
+                                <textarea id="contactMessage" name="message" rows="5" placeholder="Your message…" required maxlength="600"></textarea>
+                                <button type="submit" class="btn" id="contactSendBtn" style="width:100%;justify-content:center;gap:10px;">
+                                    <span>💬</span> Send via WhatsApp
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
         </section>
 
     </main>
 
+    <!-- ===================================================
+         FOOTER
+    =================================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+
+                <div class="footer-brand">
+                    <h3>Arivukadal Sky Yoga</h3>
+                    <p>
+                        Inspiring healthy minds, peaceful hearts and stronger bodies through traditional
+                        yoga and meditation — for children, adults and seniors.
+                    </p>
+                </div>
+
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#classes">Classes</a></li>
+                        <li><a href="#timetable">Timetable</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#reviews">Reviews</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h3>Contact</h3>
+                    <div class="contact-item">
+                        <span>📞</span>
+                        <span><strong>Founder:</strong> <a href="tel:+918754513113">8754513113</a></span>
+                    </div>
+                    <div class="contact-item">
+                        <span>📞</span>
+                        <span><strong>Co-Founder:</strong> <a href="tel:+918884887795">8884887795</a></span>
+                    </div>
+                    <div class="contact-item">
+                        <span>✉️</span>
+                        <a href="mailto:info@arivukadalskyyoga.com">info@arivukadalskyyoga.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <span>🕐</span>
+                        <span>Mon – Sun &nbsp;|&nbsp; 6:00 AM – 8:00 PM</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>📍</span>
+                        <!-- TODO: Replace placeholder Google Maps link below with studio's real address link -->
+                        <a href="https://maps.google.com/?q=Arivukadal+Sky+Yoga" target="_blank" rel="noopener noreferrer">View on Google Maps</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 Arivukadal Sky Yoga. All Rights Reserved.</p>
+                <p>Made with 🧘 for all seekers of wellness.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Supabase JS (CDN — used by reviews.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+
+    <!-- Scripts -->
     <script src="js/main.js"></script>
+    <script src="js/gallery.js"></script>
+    <script src="js/reviews.js"></script>
+    <script src="js/contact.js"></script>
 
 </body>
 </html>

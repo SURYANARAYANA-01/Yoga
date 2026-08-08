@@ -1,147 +1,49 @@
-// ==========================================
-// GALLERY PAGE JAVASCRIPT
-// Arivukadal Sky Yoga
-// ==========================================
+// =============================================================
+// GALLERY.JS — Arivukadal Sky Yoga SPA
+// Category filter for the #gallery section
+// =============================================================
 
-document.addEventListener("DOMContentLoaded", function () {
+(function () {
+    'use strict';
 
-    // ==========================
-    // Active Navigation
-    // ==========================
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const galleryItems  = document.querySelectorAll('#galleryGrid .gallery-item');
 
-    const currentPage = window.location.pathname.split("/").pop();
+    if (!filterButtons.length || !galleryItems.length) return;
 
-    document.querySelectorAll(".nav-links a").forEach(function(link){
+    // --------------------------------------------------------
+    // Filter handler
+    // --------------------------------------------------------
+    function applyFilter (filter) {
+        galleryItems.forEach(function (item) {
+            const category = item.getAttribute('data-category');
 
-        if(link.getAttribute("href") === currentPage){
-
-            link.classList.add("active");
-
-        }
-
-    });
-
-    // ==========================
-    // Scroll Reveal
-    // ==========================
-
-    const revealItems = document.querySelectorAll(
-        ".gallery-card, .video-card, .student-card, .instagram-box, .cta-content"
-    );
-
-    function revealOnScroll(){
-
-        const trigger = window.innerHeight * 0.85;
-
-        revealItems.forEach(function(item){
-
-            const top = item.getBoundingClientRect().top;
-
-            if(top < trigger){
-
-                item.style.opacity = "1";
-                item.style.transform = "translateY(0px)";
-
+            if (filter === 'all' || category === filter) {
+                item.classList.remove('hidden');
+            } else {
+                item.classList.add('hidden');
             }
-
         });
-
     }
 
-    revealItems.forEach(function(item){
+    // --------------------------------------------------------
+    // Button click handler
+    // --------------------------------------------------------
+    filterButtons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            // Update active state
+            filterButtons.forEach(function (b) { b.classList.remove('active'); });
+            btn.classList.add('active');
 
-        item.style.opacity = "0";
-        item.style.transform = "translateY(40px)";
-        item.style.transition = "all 0.7s ease";
-
+            // Apply filter
+            const filter = btn.getAttribute('data-filter') || 'all';
+            applyFilter(filter);
+        });
     });
 
-    window.addEventListener("scroll", revealOnScroll);
+    // --------------------------------------------------------
+    // Initialise — show all on load
+    // --------------------------------------------------------
+    applyFilter('all');
 
-    revealOnScroll();
-
-    // ==========================
-    // Category Buttons
-    // ==========================
-
-    const categoryButtons = document.querySelectorAll(".category-buttons button");
-
-    if(categoryButtons.length > 0){
-
-        categoryButtons.forEach(function(button){
-
-            button.addEventListener("click", function(){
-
-                categoryButtons.forEach(function(btn){
-
-                    btn.classList.remove("active");
-
-                });
-
-                this.classList.add("active");
-
-            });
-
-        });
-
-    }
-
-    // ==========================
-    // Gallery Cards
-    // ==========================
-
-    const galleryCards = document.querySelectorAll(".gallery-card");
-
-    if(galleryCards.length > 0){
-
-        galleryCards.forEach(function(card, index){
-
-            card.addEventListener("click", function(){
-
-                alert("Gallery Image " + (index + 1));
-
-            });
-
-        });
-
-    }
-
-    // ==========================
-    // Video Cards
-    // ==========================
-
-    const videoCards = document.querySelectorAll(".video-card");
-
-    if(videoCards.length > 0){
-
-        videoCards.forEach(function(video){
-
-            video.addEventListener("click", function(){
-
-                alert("Video Player Coming Soon");
-
-            });
-
-        });
-
-    }
-
-    // ==========================
-    // Instagram Button
-    // ==========================
-
-    const instagramBtn = document.querySelector(".instagram-box .btn");
-
-    if(instagramBtn){
-
-        instagramBtn.addEventListener("click", function(e){
-
-            e.preventDefault();
-
-            alert("Instagram Link Coming Soon");
-
-        });
-
-    }
-
-});
+}());

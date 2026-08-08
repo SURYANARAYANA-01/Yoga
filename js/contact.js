@@ -1,124 +1,123 @@
-// ===========================================
-// CONTACT PAGE
-// Arivukadal Sky Yoga
-// ===========================================
+// =============================================================
+// CONTACT.JS — Arivukadal Sky Yoga
+// WhatsApp form redirect — no backend, no localStorage
+// =============================================================
 
-const contactForm = document.getElementById("contactForm");
+(function () {
+    'use strict';
 
-if (contactForm) {
+    // --------------------------------------------------------
+    // Phone numbers
+    // --------------------------------------------------------
+    const PHONES = {
+        founder:   '918754513113',
+        cofounder: '918884887795'
+    };
 
-    contactForm.addEventListener("submit", function (e) {
+    // --------------------------------------------------------
+    // DOM refs
+    // --------------------------------------------------------
+    const contactForm        = document.getElementById('contactForm');
+    const founderLabel       = document.getElementById('founderLabel');
+    const cofounderLabel     = document.getElementById('cofounderLabel');
+    const recipientFounder   = document.getElementById('recipientFounder');
+    const recipientCofounder = document.getElementById('recipientCofounder');
 
+    // --------------------------------------------------------
+    // Recipient toggle — visual .selected class
+    // --------------------------------------------------------
+    function updateRecipientUI () {
+        if (!founderLabel || !cofounderLabel) return;
+
+        if (recipientFounder && recipientFounder.checked) {
+            founderLabel.classList.add('selected');
+            cofounderLabel.classList.remove('selected');
+        } else {
+            cofounderLabel.classList.add('selected');
+            founderLabel.classList.remove('selected');
+        }
+    }
+
+    if (recipientFounder) {
+        recipientFounder.addEventListener('change', updateRecipientUI);
+    }
+    if (recipientCofounder) {
+        recipientCofounder.addEventListener('change', updateRecipientUI);
+    }
+
+    // Allow clicking the whole label box to select
+    [founderLabel, cofounderLabel].forEach(function (label) {
+        if (!label) return;
+        label.addEventListener('click', function () {
+            setTimeout(updateRecipientUI, 0);
+        });
+    });
+
+    updateRecipientUI(); // set initial state
+
+    // --------------------------------------------------------
+    // Helper — open WhatsApp in new tab
+    // --------------------------------------------------------
+    function openWhatsApp (phone, message) {
+        const url = 'https://wa.me/' + phone + '?text=' + encodeURIComponent(message);
+        window.open(url, '_blank', 'noopener,noreferrer');
+    }
+
+    // --------------------------------------------------------
+    // Contact form submit → WhatsApp redirect
+    // --------------------------------------------------------
+    if (!contactForm) return;
+
+    contactForm.addEventListener('submit', function (e) {
         e.preventDefault();
 
-        const formData = {
+        const name    = (document.getElementById('contactName')    || {}).value || '';
+        const phone   = (document.getElementById('contactPhone')   || {}).value || '';
+        const email   = (document.getElementById('contactEmail')   || {}).value || '';
+        const subject = (document.getElementById('contactSubject') || {}).value || '';
+        const message = (document.getElementById('contactMessage') || {}).value || '';
 
-            fullName: contactForm.elements[0].value.trim(),
-
-            phone: contactForm.elements[1].value.trim(),
-
-            email: contactForm.elements[2].value.trim(),
-
-            subject: contactForm.elements[3].value.trim(),
-
-            message: contactForm.elements[4].value.trim(),
-
-            submittedAt: new Date().toLocaleString()
-
-        };
-
-        // Simple Validation
-
+        // Basic validation
         if (
-
-            formData.fullName === "" ||
-
-            formData.phone === "" ||
-
-            formData.email === "" ||
-
-            formData.subject === "" ||
-
-            formData.message === ""
-
+            name.trim()    === '' ||
+            phone.trim()   === '' ||
+            email.trim()   === '' ||
+            subject.trim() === '' ||
+            message.trim() === ''
         ) {
-
-            alert("Please fill in all fields.");
-
+            alert('Please fill in all fields before sending.');
             return;
-
         }
 
-        // Save Temporarily
+        // Determine selected recipient
+        const selectedPhone = (recipientCofounder && recipientCofounder.checked)
+            ? PHONES.cofounder
+            : PHONES.founder;
 
-        let messages = JSON.parse(localStorage.getItem("contactMessages")) || [];
+        const recipientName = (recipientCofounder && recipientCofounder.checked)
+            ? 'Co-Founder'
+            : 'Founder';
 
-        messages.push(formData);
+        // Build formatted WhatsApp message
+        const waMessage = [
+            '🙏 *New Enquiry — Arivukadal Sky Yoga*',
+            '',
+            '*To:* ' + recipientName,
+            '*Name:* ' + name.trim(),
+            '*Phone:* ' + phone.trim(),
+            '*Email:* ' + email.trim(),
+            '',
+            '*Subject:* ' + subject.trim(),
+            '',
+            '*Message:*',
+            message.trim()
+        ].join('\n');
 
-        localStorage.setItem("contactMessages", JSON.stringify(messages));
+        openWhatsApp(selectedPhone, waMessage);
 
-        // Success
-
-        alert("Thank you! Your message has been sent successfully.");
-
-        // Reset Form
-
+        // Reset form after redirect opens
         contactForm.reset();
-
-        // ===================================
-        // TODO
-        // Send data to Backend API
-        // fetch('/api/contact', {...})
-        // ===================================
-
+        updateRecipientUI();
     });
 
-}
-
-// ===========================================
-// WHATSAPP BUTTON
-// ===========================================
-
-const whatsappBtn = document.querySelector(".contact-info .btn");
-
-if (whatsappBtn) {
-
-    whatsappBtn.addEventListener("click", function (e) {
-
-        e.preventDefault();
-
-        const phone = "918754513113";
-
-        const message = encodeURIComponent(
-
-            "Hello Arivukadal Sky Yoga, I would like to know more about your yoga classes."
-
-        );
-
-        window.open(
-
-            `https://wa.me/${phone}?text=${message}`,
-
-            "_blank"
-
-        );
-
-    });
-
-}
-
-// ===========================================
-// FUTURE FEATURES
-// ===========================================
-
-// Google Maps Integration
-
-// Email API
-
-// Backend Contact API
-
-// Toast Notifications
-
-// Spam Protection
-
-// reCAPTCHA
+}());

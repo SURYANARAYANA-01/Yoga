@@ -1,0 +1,327 @@
+/* =============================================================
+   RESPONSIVE — Arivukadal Sky Yoga SPA
+   Breakpoints: 1100px | 900px | 768px | 600px | 375px
+============================================================= */
+
+/* =====================================================
+   1100px — Tighten large grids
+===================================================== */
+@media (max-width:1100px){
+
+    h1{ font-size:3.4rem; }
+    h2{ font-size:2.5rem; }
+
+    .hero h1{ font-size:4.2rem; }
+
+    .hero-grid{ gap:50px; }
+
+    .pricing-grid{ grid-template-columns:repeat(2,1fr); }
+
+    .batch-timing-grid{ grid-template-columns:repeat(2,1fr); }
+
+    .programs-grid{ grid-template-columns:repeat(3,1fr); }
+
+}
+
+/* =====================================================
+   900px — 3-col → 2-col
+===================================================== */
+@media (max-width:900px){
+
+    h1{ font-size:2.8rem; }
+    h2{ font-size:2.2rem; }
+
+    .hero h1{ font-size:3.5rem; }
+
+    section{ padding:80px 0; }
+
+    /* About */
+    .about-story-grid{ grid-template-columns:1fr; gap:40px; }
+    .about-story-grid.reverse{ direction:ltr; }
+
+    /* Classes */
+    .batches-grid{ grid-template-columns:1fr; }
+    .programs-grid{ grid-template-columns:repeat(2,1fr); }
+    .weekend-grid{ grid-template-columns:1fr; }
+
+    /* Timetable */
+    .batch-timing-grid{ grid-template-columns:repeat(2,1fr); }
+
+    /* Gallery */
+    .gallery-grid{
+        grid-template-columns:repeat(3,1fr);
+        grid-auto-rows:160px;
+    }
+
+    /* Reviews */
+    .reviews-layout{ grid-template-columns:1fr; }
+    .review-form-box{ position:static; }
+
+    /* Reviews */
+    .reviews-grid{ grid-template-columns:repeat(2,1fr); }
+    .rating-summary-bar{ flex-direction:column; align-items:flex-start; gap:16px; }
+    .summary-right{ width:100%; }
+    .summary-write-btn{ width:100%; justify-content:center; }
+
+    /* Blog */
+    .blog-grid{ grid-template-columns:repeat(2,1fr); }
+
+    /* Contact */
+    .contact-layout{ grid-template-columns:1fr; }
+    .contact-info-box{ position:static; }
+
+    /* Footer */
+    .footer-grid{ grid-template-columns:1fr 1fr; gap:36px; }
+
+    /* Why grid */
+    .why-grid{ grid-template-columns:repeat(2,1fr); }
+
+    /* Pricing */
+    .pricing-grid{ grid-template-columns:repeat(2,1fr); }
+
+    /* Mission grid */
+    .mv-grid{ grid-template-columns:1fr; }
+
+}
+
+/* =====================================================
+   768px — Mobile hamburger kicks in
+===================================================== */
+@media (max-width:768px){
+
+    /* ---- HAMBURGER NAV ---- */
+
+    .hamburger{
+        display:flex;
+    }
+
+    .nav-overlay{
+        display:block;
+    }
+
+    .nav-links{
+        position:fixed;
+        top:0;
+        right:0;
+        height:100dvh;
+        width:min(320px, 88vw);
+        background:rgba(255,255,255,.97);
+        backdrop-filter:blur(20px);
+        flex-direction:column;
+        gap:0;
+        padding:calc(var(--header-h) + 20px) 0 30px;
+        transform:translateX(110%);
+        transition:transform .38s cubic-bezier(.4,0,.2,1);
+        z-index:1000;
+        box-shadow:-10px 0 40px rgba(0,0,0,.12);
+        overflow-y:auto;
+    }
+
+    .nav-links.open{
+        transform:translateX(0);
+    }
+
+    .nav-links li{
+        border-bottom:1px solid var(--border);
+    }
+
+    .nav-links a{
+        display:block;
+        padding:16px 32px;
+        font-size:1.05rem;
+    }
+
+    .nav-links a::after{
+        display:none;
+    }
+
+    .nav-links a.active,
+    .nav-links a:hover{
+        background:rgba(109,184,212,.07);
+        color:var(--secondary);
+    }
+
+    /* ---- HERO ---- */
+
+    .hero-grid{
+        grid-template-columns:1fr;
+        gap:40px;
+        padding-top:40px;
+    }
+
+    .hero h1{ font-size:3rem; }
+    .hero p{ font-size:1rem; }
+
+    .hero-buttons{
+        flex-wrap:wrap;
+        gap:14px;
+    }
+
+    .hero-image{
+        order:-1;
+    }
+
+    .image-placeholder{
+        max-width:100%;
+        aspect-ratio:3/2;
+    }
+
+    /* ---- ABOUT ---- */
+
+    .about-story-grid{ gap:30px; }
+
+    .why-grid{ grid-template-columns:1fr; }
+
+    /* ---- CLASSES ---- */
+
+    .batches-grid{ grid-template-columns:1fr; }
+    .programs-grid{ grid-template-columns:1fr 1fr; }
+
+    /* ---- TIMETABLE ---- */
+
+    .batch-timing-grid{ grid-template-columns:1fr 1fr; }
+
+    /* ---- GALLERY ---- */
+
+    .gallery-grid{
+        grid-template-columns:repeat(2,1fr);
+        grid-auto-rows:150px;
+    }
+
+    .gallery-item.span-2{
+        grid-column:span 1;
+        grid-row:span 1;
+    }
+
+    .gallery-item.span-row{
+        grid-row:span 1;
+    }
+
+    /* ---- PRICING ---- */
+
+    .pricing-grid{ grid-template-columns:1fr; }
+
+    /* ---- REVIEWS ---- */
+
+    .reviews-layout{ gap:30px; }
+
+    .review-form-box{ padding:28px 22px; }
+
+    .star-rating-widget label{ font-size:1.8rem; }
+
+    /* ---- BLOG ---- */
+
+    .blog-grid{ grid-template-columns:1fr; }
+
+    /* ---- CONTACT ---- */
+
+    .form-row{ grid-template-columns:1fr; }
+
+    .contact-form-box{ padding:28px 22px; }
+    .contact-info-box{ padding:28px 22px; }
+
+    /* ---- FOOTER ---- */
+
+    .footer-grid{ grid-template-columns:1fr; gap:28px; }
+
+    .footer-bottom{
+        flex-direction:column;
+        text-align:center;
+        gap:6px;
+    }
+
+}
+
+/* =====================================================
+   600px — Small tablets / large phones
+===================================================== */
+@media (max-width:600px){
+
+    h1{ font-size:2.2rem; }
+    h2{ font-size:1.9rem; }
+    h3{ font-size:1.5rem; }
+
+    .hero h1{ font-size:2.4rem; }
+
+    section{ padding:64px 0; }
+
+    /* Nav */
+    .nav-links{ width:100%; }
+
+    /* Hero */
+    .btn, .btn-outline{
+        padding:12px 24px;
+        font-size:.9rem;
+    }
+
+    /* About */
+    .about-img-placeholder{ aspect-ratio:3/2; }
+
+    /* Classes */
+    .programs-grid{ grid-template-columns:1fr; }
+    .weekend-grid{ grid-template-columns:1fr; }
+
+    /* Timetable */
+    .batch-timing-grid{ grid-template-columns:1fr; }
+    .timetable-note{ padding:22px 20px; }
+
+    /* Gallery */
+    .gallery-grid{
+        grid-template-columns:1fr 1fr;
+        grid-auto-rows:130px;
+    }
+
+    .filter-buttons{ gap:8px; }
+    .filter-btn{ padding:8px 14px; font-size:.82rem; }
+
+    /* Pricing */
+    .pricing-card{ padding:24px 20px; }
+
+    /* Reviews */
+    .review-form-box,
+    .contact-form-box,
+    .contact-info-box{ padding:24px 18px; }
+
+    /* Blog */
+    .blog-card h3{ font-size:1.25rem; }
+
+    /* Footer */
+    .footer{ padding:50px 0 24px; }
+
+}
+
+/* =====================================================
+   375px — Minimum supported width
+===================================================== */
+@media (max-width:375px){
+
+    h1{ font-size:1.95rem; }
+    h2{ font-size:1.65rem; }
+
+    .hero h1{ font-size:2rem; }
+
+    .container{ width:93%; }
+
+    /* Pricing: ensure ₹ amount doesn't overflow */
+    .pricing-amount{ font-size:2.2rem; }
+
+    /* Gallery: single column at minimum */
+    .gallery-grid{
+        grid-template-columns:1fr;
+        grid-auto-rows:160px;
+    }
+
+    /* Schedule table gets its own horizontal scroll */
+    .timetable-scroll{ margin-left:-16px; margin-right:-16px; border-radius:0; }
+
+    /* Batch cards */
+    .batch-card ul{ gap:.4rem; }
+
+    /* Hero buttons stack */
+    .hero-buttons{ flex-direction:column; }
+    .btn, .btn-outline{ width:100%; text-align:center; }
+
+    /* Star widget */
+    .star-rating-widget label{ font-size:1.6rem; }
+
+}
