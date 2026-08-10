@@ -90,49 +90,17 @@
 .nav-overlay.open{
     opacity:1;
 }
-
-.logo{
-
-    display:flex;
-
-    align-items:center;
-
+.logo {
+    display: flex;
+    align-items: center;
 }
 
-.logo-placeholder{
-
-    width:170px;
-
-    height:60px;
-
-    border-radius:16px;
-
-    border:2px dashed rgba(109,184,212,.4);
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    font-family:var(--heading-font);
-
-    font-size:2rem;
-
-    color:var(--text);
-
-    transition:.3s;
-
+.logo img {
+    width: 120px;
+    height: auto;
+    display: block;
+    object-fit: contain;
 }
-
-.logo-placeholder:hover{
-
-    background:#fff;
-
-    transform:translateY(-3px);
-
-}
-
 .nav-links{
 
     display:flex;

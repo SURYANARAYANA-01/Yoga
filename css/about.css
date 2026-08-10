@@ -32,23 +32,34 @@
 }
 
 /* ==========================================
-   ABOUT STORY
+ABOUT STORY
 ========================================== */
 
-.about-story{
-    padding:100px 0;
+.about-story {
+    padding: 60px 0 90px;
+}
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 45px;
+    align-items: center;
 }
 
-.about-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:70px;
-    align-items:center;
+.about-image {
+    width: 100%;
 }
 
-.about-image{
-    display:flex;
-    justify-content:center;
+/* STORY VIDEO */
+.story-video {
+    width: 100%;
+    height: auto;
+
+    display: block;
+    object-fit: contain;
+
+    border-radius: 25px;
+
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
 }
 
 .image-placeholder{
@@ -80,8 +91,10 @@
     margin-bottom:25px;
 }
 
-.about-content p{
-    margin-bottom:18px;
+.about-content h2 {
+    margin-bottom: 22px;
+    font-size: 3rem;
+    line-height: 1.15;
 }
 
 .about-content ul{
