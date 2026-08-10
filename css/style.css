@@ -173,7 +173,25 @@ section[id]{
     margin-top:10px;
 
 }
+.hero {
+    min-height: 100vh;
 
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.55) 0%,
+            rgba(255, 255, 255, 0.25) 42%,
+            rgba(255, 255, 255, 0.03) 70%
+        ),
+        url("../assets/images/yoga-bg.jpeg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+}
 /* ===================================
    GLASS CARD
 =================================== */
