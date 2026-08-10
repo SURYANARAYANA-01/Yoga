@@ -18,11 +18,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/spa.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/variables.css?v=6">
+    <link rel="stylesheet" href="css/style.css?v=6">
+    <link rel="stylesheet" href="css/components.css?v=6">
+    <link rel="stylesheet" href="css/spa.css?v=6">
+    <link rel="stylesheet" href="css/responsive.css?v=6">
 </head>
 
 <body>
@@ -120,11 +120,11 @@
 
                 <!-- Our Story -->
                 <div class="about-story-grid reveal">
-                   <div class="about-image">
-    <video class="story-video" autoplay muted loop playsinline>
-    <source src="assets/videos/story-video.mp4" type="video/mp4">
-</video>
-</div>
+                    <div class="about-img-wrap">
+                        <video class="story-video" autoplay muted loop playsinline>
+                            <source src="assets/videos/story-video.mp4" type="video/mp4">
+                        </video>
+                    </div>
                     <div class="about-text">
                         <span class="section-eyebrow">Our Story</span>
                         <h2>Rooted in Tradition, Growing with You</h2>
@@ -183,42 +183,61 @@
                 </div>
                 <div class="why-grid reveal">
                     <div class="why-card glass">
-                        <span class="why-icon">🏅</span>
+                        <div class="why-icon-badge" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"></path><path d="M8.21 13.89 7 21l5-3 5 3-1.21-7.11"></path></svg>
+                        </div>
                         <h3>Certified Guidance</h3>
                         <p>Experienced instructors devoted to your personal growth at every stage of life.</p>
                     </div>
                     <div class="why-card glass">
-                        <span class="why-icon">🌿</span>
+                        <div class="why-icon-badge" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg>
+                        </div>
                         <h3>Holistic Wellness</h3>
                         <p>Programs that nurture physical strength, mental clarity and emotional balance together.</p>
                     </div>
                     <div class="why-card glass">
-                        <span class="why-icon">🧒</span>
+                        <div class="why-icon-badge" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z"></path><path d="M20 21a8 8 0 0 0-16 0"></path></svg>
+                        </div>
                         <h3>Kid-Friendly</h3>
                         <p>Safe, playful and age-appropriate sessions designed specifically for children aged 7–18.</p>
                     </div>
                     <div class="why-card glass">
-                        <span class="why-icon">🕐</span>
+                        <div class="why-icon-badge" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        </div>
                         <h3>Flexible Timings</h3>
                         <p>Morning, afternoon, evening and weekend batches so yoga fits into any schedule.</p>
                     </div>
                     <div class="why-card glass">
-                        <span class="why-icon">☮️</span>
+                        <div class="why-icon-badge" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M12 3c-1.5 3-3 5.5-5 8 2 0 4.5.5 5 3 .5-2.5 3-3 5-3-2-2.5-3.5-5-5-8Z"></path><path d="M4 14c2.5 0 4.5 1 5 3-.5-2 1.5-3.5 3-4.5C10 11.5 7 12 4 14Z"></path><path d="M20 14c-2.5 0-4.5 1-5 3 .5-2-1.5-3.5-3-4.5 2-.5 5 0 8 1.5Z"></path></svg>
+                        </div>
                         <h3>Peaceful Environment</h3>
                         <p>A calm, welcoming space that makes every student — young or old — feel at ease.</p>
                     </div>
                     <div class="why-card glass">
-                        <span class="why-icon">🤝</span>
+                        <div class="why-icon-badge" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        </div>
                         <h3>Community Support</h3>
                         <p>Grow alongside like-minded seekers who support and inspire each other every day.</p>
                     </div>
                 </div>
 
-                <!-- Founder Message -->
+                <!-- Founder & Co-Founder Messages -->
                 <div class="founder-section" style="margin-top:80px;">
-                    <div class="about-story-grid reverse reveal">
+                    <div class="section-title reveal">
+                        <span>Leadership</span>
+                        <h2>Messages from Our Founders</h2>
+                    </div>
+
+                    <!-- Founder Message -->
+                    <div class="about-story-grid reverse reveal" style="margin-bottom:60px;">
                         <div class="about-img-wrap">
-                            <div class="about-img-placeholder">
+                            <img src="assets/images/Founder.jpeg" alt="Founder — Arivukadal Sky Yoga" class="founder-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="about-img-placeholder" style="display:none;">
                                 <span class="ph-icon">🙏</span>
                                 <p>Founder Photo</p>
                             </div>
@@ -236,6 +255,30 @@
                                 We welcome every student — a curious child exploring their first sun salutation,
                                 a busy adult rediscovering their breath, or a senior finding gentle strength —
                                 as a valued member of our growing family.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Co-Founder Message -->
+                    <div class="about-story-grid reveal">
+                        <div class="about-img-wrap">
+                            <img src="assets/images/Co-Founder.jpeg" alt="Co-Founder — Arivukadal Sky Yoga" class="founder-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="about-img-placeholder" style="display:none;">
+                                <span class="ph-icon">🪷</span>
+                                <p>Co-Founder Photo</p>
+                            </div>
+                        </div>
+                        <div class="about-text">
+                            <span class="section-eyebrow">From the Co-Founder</span>
+                            <h2>Empowering Every Practitioner</h2>
+                            <blockquote class="founder-quote">
+                                "Our vision is to build a nurturing sanctuary where ancient yogic wisdom meets modern lives —
+                                 helping practitioners of all generations cultivate balance, strength, and lifelong peace."
+                            </blockquote>
+                            <p class="founder-name">— Co-Founder, Arivukadal Sky Yoga</p>
+                            <p>
+                                Through structured guidance and personal dedication, we ensure each session supports your unique journey —
+                                building healthy habits for children, stress relief for adults, and gentle vitality for elders.
                             </p>
                             <a href="#contact" class="btn" style="margin-top:20px;">Begin Your Journey</a>
                         </div>
@@ -691,7 +734,7 @@
                         <p class="pricing-notes">
                             A comprehensive introduction to classical yoga practice. Ideal for anyone starting their yoga journey — children, adults or seniors.
                         </p>
-                        <div class="payment-slot" data-program="foundation-12day"></div>
+                        <a href="#contact" class="btn" style="margin-top:20px; width:100%; justify-content:center;">Enquire / Enroll</a>
                     </div>
 
                     <!-- Kayakalpam -->
@@ -703,7 +746,7 @@
                         <p class="pricing-notes">
                             Traditional bodily and mental rejuvenation through ancient Kayakalpa techniques — a deeply restorative experience.
                         </p>
-                        <div class="payment-slot" data-program="kayakalpam"></div>
+                        <a href="#contact" class="btn" style="margin-top:20px; width:100%; justify-content:center;">Enquire / Enroll</a>
                     </div>
 
                     <!-- Brahmagnyanam -->
@@ -715,7 +758,7 @@
                         <p class="pricing-notes">
                             A profound 4-day journey into the deeper wisdom traditions and spiritual dimensions of yoga. Suitable for serious practitioners.
                         </p>
-                        <div class="payment-slot" data-program="brahmagnyanam"></div>
+                        <a href="#contact" class="btn" style="margin-top:20px; width:100%; justify-content:center;">Enquire / Enroll</a>
                     </div>
 
                     <!-- Introspection I -->
@@ -727,7 +770,7 @@
                         <p class="pricing-notes">
                             A focused 2-day day program exploring self-awareness and inner stillness. Includes morning tea, lunch and evening tea.
                         </p>
-                        <div class="payment-slot" data-program="introspection-1"></div>
+                        <a href="#contact" class="btn" style="margin-top:20px; width:100%; justify-content:center;">Enquire / Enroll</a>
                     </div>
 
                     <!-- Introspection II -->
@@ -739,7 +782,7 @@
                         <p class="pricing-notes">
                             Builds on Introspection I — a deeper 2-day exploration of inner presence and awareness. Includes meals.
                         </p>
-                        <div class="payment-slot" data-program="introspection-2"></div>
+                        <a href="#contact" class="btn" style="margin-top:20px; width:100%; justify-content:center;">Enquire / Enroll</a>
                     </div>
 
                     <!-- Introspection III -->
@@ -751,7 +794,7 @@
                         <p class="pricing-notes">
                             The advanced chapter — a 2-day immersive self-discovery program for dedicated practitioners. Includes meals.
                         </p>
-                        <div class="payment-slot" data-program="introspection-3"></div>
+                        <a href="#contact" class="btn" style="margin-top:20px; width:100%; justify-content:center;">Enquire / Enroll</a>
                     </div>
 
                     <!-- Students Camp -->
@@ -763,7 +806,7 @@
                         <p class="pricing-notes">
                             A vibrant summer camp for children combining yoga, wellness games and group activities. Builds lifelong healthy habits.
                         </p>
-                        <div class="payment-slot" data-program="students-camp"></div>
+                        <a href="#contact" class="btn" style="margin-top:20px; width:100%; justify-content:center;">Enquire / Enroll</a>
                     </div>
 
                     <!-- Kids All Programs -->
@@ -775,7 +818,7 @@
                         <p class="pricing-notes">
                             Access to all kids-specific programs at one bundled price. The best value for parents enrolling children in multiple offerings.
                         </p>
-                        <div class="payment-slot" data-program="kids-all-programs"></div>
+                        <a href="#contact" class="btn" style="margin-top:20px; width:100%; justify-content:center;">Enquire / Enroll</a>
                     </div>
 
                     <!-- Kids Weekend -->
@@ -787,7 +830,7 @@
                         <p class="pricing-notes">
                             Weekend-only yoga for children (Sat &amp; Sun, 7:00 – 8:30 AM). Perfect for school-goers who can only commit on weekends.
                         </p>
-                        <div class="payment-slot" data-program="kids-weekend"></div>
+                        <a href="#contact" class="btn" style="margin-top:20px; width:100%; justify-content:center;">Enquire / Enroll</a>
                     </div>
 
                     <!-- Kids Regular -->
@@ -799,7 +842,7 @@
                         <p class="pricing-notes">
                             Weekday evening sessions (4:00 – 5:00 PM) for children. A consistent daily practice that builds discipline and inner strength.
                         </p>
-                        <div class="payment-slot" data-program="kids-regular"></div>
+                        <a href="#contact" class="btn" style="margin-top:20px; width:100%; justify-content:center;">Enquire / Enroll</a>
                     </div>
 
                 </div>

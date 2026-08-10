@@ -38,7 +38,10 @@
 ===================================================== */
 
 #about{
-    background:var(--white);
+    background: linear-gradient(160deg,
+        rgba(109,184,212,.15) 0%,
+        #ffffff 50%,
+        rgba(248,232,166,.22) 100%);
 }
 
 /* Story Grid */
@@ -63,12 +66,16 @@
     width:100%;
 }
 
-.about-img-wrap video{
+.about-img-wrap video,
+.founder-img{
     display:block;
     width:100%;
     height:420px;
     object-fit:cover;
+    object-position:top center;
     border-radius:25px;
+    box-shadow:var(--shadow-md);
+    border:1px solid rgba(109,184,212,.3);
 }
 
 .about-text{
@@ -159,7 +166,10 @@
 .why-card{
     padding:36px 28px;
     border-radius:var(--radius-md);
-    text-align:center;
+    text-align:left;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
     transition:transform var(--transition), box-shadow var(--transition);
 }
 
@@ -168,10 +178,39 @@
     box-shadow:var(--shadow-md);
 }
 
-.why-icon{
-    font-size:2.4rem;
-    margin-bottom:14px;
-    display:block;
+.why-icon-badge{
+    width:56px;
+    height:56px;
+    border-radius:50%;
+    background:linear-gradient(135deg, rgba(109,184,212,.18), rgba(248,232,166,.35));
+    border:1px solid rgba(109,184,212,.35);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:18px;
+    transition:transform .3s ease, background .3s ease, border-color .3s ease, box-shadow .3s ease;
+}
+
+.why-icon-badge svg{
+    width:26px;
+    height:26px;
+    fill:none;
+    stroke:var(--secondary);
+    stroke-width:1.8;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    transition:stroke .3s ease;
+}
+
+.why-card:hover .why-icon-badge{
+    transform:scale(1.1) rotate(4deg);
+    background:linear-gradient(135deg, var(--primary), var(--secondary));
+    border-color:transparent;
+    box-shadow:0 6px 18px rgba(109,184,212,.4);
+}
+
+.why-card:hover .why-icon-badge svg{
+    stroke:#ffffff;
 }
 
 .why-card h3{
@@ -180,10 +219,10 @@
     margin-bottom:10px;
 }
 
-/* Founder */
+/* Founder / Leadership */
 .founder-section{
-    background:var(--white);
-    padding:100px 0;
+    background:transparent;
+    padding:40px 0 0;
 }
 
 .founder-quote{
@@ -208,7 +247,10 @@
 ===================================================== */
 
 #classes{
-    background:var(--background);
+    background: linear-gradient(135deg,
+        #F4F9FC 0%,
+        #FFFFFF 50%,
+        #FFFDF5 100%);
 }
 
 .subsection-title{
@@ -380,7 +422,10 @@
 ===================================================== */
 
 #timetable{
-    background:var(--white);
+    background: linear-gradient(135deg,
+        rgba(248,232,166,.18) 0%,
+        #ffffff 50%,
+        rgba(109,184,212,.15) 100%);
 }
 
 .timetable-scroll{
@@ -529,64 +574,10 @@
    GALLERY SECTION
 ===================================================== */
 #gallery {
-    background: var(--background);
-    position: relative;
-    overflow: hidden;
-    padding-top: 0;
-}
-
-#gallery::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 525px;
-
-    background-image: url("../assets/images/gallery-bg.jpeg");
-    background-size: cover;
-    background-position: center 35%;
-    background-repeat: no-repeat;
-
-    z-index: 0;
-}
-
-#gallery > .container {
-    position: relative;
-    z-index: 1;
-    padding-top: 80px;
-}
-
-#gallery .section-title span {
-    color: #8b263f;
-    font-weight: 700;
-}
-
-#gallery .section-title h2 {
-    color: #ffffff;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.7);
-}
-
-#gallery > .container > p {
-    color: #ffffff;
-    font-weight: 500;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.8);
-}
-
-#gallery .filter-btn {
-    background: rgba(255,255,255,0.85);
-    backdrop-filter: blur(5px);
-    border-color: rgba(255,255,255,0.8);
-}
-
-#gallery .filter-btn:hover,
-#gallery .filter-btn.active {
-    background: linear-gradient(
-        135deg,
-        var(--primary),
-        var(--secondary)
-    );
-    color: white;
+    background: linear-gradient(180deg,
+        rgba(109,184,212,.12) 0%,
+        #ffffff 60%,
+        rgba(248,232,166,.15) 100%);
 }
 
 .filter-buttons{
@@ -598,23 +589,32 @@
 }
 
 .filter-btn{
-    padding:10px 22px;
-    border:2px solid var(--border);
-    background:transparent;
+    padding:10px 24px;
+    border:2px solid rgba(109,184,212,.35);
+    background:#ffffff;
     border-radius:50px;
     font-family:var(--body-font);
     font-size:.9rem;
     font-weight:500;
     color:var(--text);
     cursor:pointer;
-    transition:var(--transition);
+    transition:all .25s ease;
+    outline:none;
 }
 
 .filter-btn:hover,
 .filter-btn.active{
-    background:linear-gradient(135deg, var(--primary), var(--secondary));
-    color:#fff;
-    border-color:transparent;
+    background:linear-gradient(135deg, var(--primary), var(--secondary)) border-box;
+    border:2px solid transparent;
+    background-origin:border-box;
+    background-clip:border-box;
+    color:#ffffff;
+    box-shadow:0 4px 16px rgba(109,184,212,.45);
+}
+
+.filter-btn:focus-visible{
+    outline:2px solid var(--primary);
+    outline-offset:2px;
 }
 
 .gallery-grid{
@@ -691,7 +691,10 @@
 ===================================================== */
 
 #pricing{
-    background:var(--white);
+    background: linear-gradient(135deg,
+        rgba(248,232,166,.22) 0%,
+        #ffffff 50%,
+        rgba(109,184,212,.18) 100%);
 }
 
 .lunch-banner{
@@ -804,37 +807,17 @@
     flex:1;
 }
 
-/* Payment slot — hook for Razorpay / Instamojo */
-.payment-slot{
-    margin-top:20px;
-    /* Drop your payment button/snippet inside this div.
-       It carries a data-program attribute for identification.
-       Example:
-         <div class="payment-slot" data-program="kayakalpam">
-           <!-- Razorpay button goes here -->
-         </div>
-    */
-    min-height:44px;
-    border-radius:var(--radius-sm);
-    display:flex;
-    align-items:center;
-}
 
-/* Placeholder label shown until payment button is inserted */
-.payment-slot:empty::after{
-    content:"Payment button coming soon";
-    font-size:.8rem;
-    color:var(--text-light);
-    font-style:italic;
-    opacity:.6;
-}
 
 /* =====================================================
    REVIEWS SECTION
 ===================================================== */
 
 #reviews{
-    background:var(--background);
+    background: linear-gradient(135deg,
+        #F0F7FA 0%,
+        #ffffff 50%,
+        #FFFDF0 100%);
 }
 
 /* ── Header block ── */
@@ -1329,7 +1312,10 @@
 ===================================================== */
 
 #blog{
-    background:var(--white);
+    background: linear-gradient(160deg,
+        rgba(109,184,212,.12) 0%,
+        #ffffff 50%,
+        rgba(248,232,166,.15) 100%);
 }
 
 .blog-grid{
@@ -1424,7 +1410,10 @@
 ===================================================== */
 
 #contact{
-    background:var(--background);
+    background: linear-gradient(135deg,
+        rgba(248,232,166,.25) 0%,
+        #ffffff 50%,
+        rgba(109,184,212,.18) 100%);
 }
 
 .contact-layout{

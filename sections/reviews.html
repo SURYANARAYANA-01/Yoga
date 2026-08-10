@@ -1,0 +1,114 @@
+<!-- ===================================================
+     #reviews — REVIEWS
+=================================================== -->
+<section id="reviews">
+    <div class="container">
+
+        <!-- ── Header block ── -->
+        <div class="reviews-header reveal">
+            <h2 class="reviews-main-heading">Don't just take our word for it,</h2>
+            <p class="reviews-subline">Hear from our students.</p>
+            <p class="reviews-muted">Our students' experiences speak for themselves.</p>
+        </div>
+
+        <!-- ── Rating summary bar (always visible) ── -->
+        <div class="rating-summary-bar glass reveal" id="ratingSummaryBar" aria-label="Overall rating summary">
+            <div class="summary-left">
+                <span class="rating-tier-word" id="ratingTier">Welcome</span>
+                <span class="summary-divider" aria-hidden="true">·</span>
+                <span class="summary-studio-name">Arivukadal Sky Yoga</span>
+                <div class="summary-stars-track" aria-hidden="true">
+                    <span class="summary-stars-bg">★★★★★</span>
+                    <span class="summary-stars-fg" id="summaryStarsFg" style="width:100%;">★★★★★</span>
+                </div>
+                <span class="summary-avg-number" id="summaryAvg">5.0</span>
+                <span class="summary-count-text" id="summaryCountText">Be the first one to write a review</span>
+            </div>
+            <div class="summary-right">
+                <button type="button" class="btn summary-write-btn open-review-modal-btn" id="writeReviewBtn">✍️ Write a Review</button>
+            </div>
+        </div>
+
+        <!-- ── Loading state ── -->
+        <div class="reviews-loading" id="reviewsLoading" aria-live="polite">Loading reviews…</div>
+
+        <!-- ── Empty state (zero reviews) ── -->
+        <div class="reviews-empty-state" id="reviewsEmptyState" style="display:none;">
+            <span class="empty-state-icon">🌟</span>
+            <h3>No reviews yet — be the first!</h3>
+            <p>Be the first to share your experience at Arivukadal Sky Yoga.</p>
+        </div>
+
+        <!-- ── Error / No Credentials state ── -->
+        <div class="reviews-error-state" id="reviewsErrorState" style="display:none;">
+            <p id="reviewsErrorText">⚙️ Reviews will appear here once Supabase credentials are configured.</p>
+        </div>
+
+        <!-- ── 4-column review cards grid ── -->
+        <div class="reviews-grid" id="reviewsGrid" style="display:none;" aria-label="Student reviews"></div>
+
+    </div>
+</section>
+
+<!-- ── Review Modal Popup ── -->
+<div class="review-modal-overlay" id="reviewModal" aria-hidden="true">
+    <div class="review-modal-card glass" role="dialog" aria-labelledby="modalTitle" aria-modal="true">
+        <button type="button" class="modal-close-btn" id="closeReviewModal" aria-label="Close modal">&times;</button>
+        <div class="review-form-header">
+            <h3 id="modalTitle">Share Your Experience</h3>
+            <p>Practised with us? We'd love to hear from you.</p>
+        </div>
+
+        <form id="reviewForm" novalidate class="review-form-fields-wrap">
+            <label for="reviewName" class="form-label">Your Name *</label>
+            <input
+                type="text"
+                id="reviewName"
+                name="name"
+                placeholder="e.g. Priya Sharma"
+                maxlength="80"
+                required
+                autocomplete="name">
+
+            <!-- Star Rating Widget -->
+            <span class="star-rating-label">Your Rating *</span>
+            <div class="star-rating-widget" role="radiogroup" aria-label="Star rating, 1 to 5">
+                <input type="radio" id="star5" name="rating" value="5">
+                <label for="star5" title="5 stars — Excellent" tabindex="0" role="radio" aria-label="5 stars">★</label>
+
+                <input type="radio" id="star4" name="rating" value="4">
+                <label for="star4" title="4 stars — Very Good" tabindex="0" role="radio" aria-label="4 stars">★</label>
+
+                <input type="radio" id="star3" name="rating" value="3">
+                <label for="star3" title="3 stars — Good" tabindex="0" role="radio" aria-label="3 stars">★</label>
+
+                <input type="radio" id="star2" name="rating" value="2">
+                <label for="star2" title="2 stars — Fair" tabindex="0" role="radio" aria-label="2 stars">★</label>
+
+                <input type="radio" id="star1" name="rating" value="1">
+                <label for="star1" title="1 star — Poor" tabindex="0" role="radio" aria-label="1 star">★</label>
+            </div>
+            <div class="review-form-error" id="ratingError">Please select a rating.</div>
+
+            <label for="reviewComment" class="form-label">Your Review *</label>
+            <textarea
+                id="reviewComment"
+                name="comment"
+                rows="4"
+                placeholder="Tell others about your experience at Arivukadal Sky Yoga…"
+                maxlength="500"
+                required></textarea>
+            <p class="char-hint"><span id="charCount">0</span>/500 characters</p>
+
+            <div class="review-form-error" id="formError">Please fill in all fields correctly.</div>
+
+            <button type="submit" class="btn" id="reviewSubmitBtn">
+                Submit Review
+            </button>
+        </form>
+
+        <div class="review-success-msg" id="reviewSuccessMsg" style="display:none;">
+            <span>✓</span> Thank you! Your review has been submitted successfully.
+        </div>
+    </div>
+</div>
