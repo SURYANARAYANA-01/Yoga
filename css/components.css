@@ -295,6 +295,13 @@
 
     font-weight:600;
 
+    animation:trustFloat 4.5s ease-in-out infinite;
+
+}
+
+@keyframes trustFloat{
+    0%, 100%{ transform:translateY(0); }
+    50%{ transform:translateY(-8px); }
 }
 
 /* ==========================================
@@ -360,7 +367,7 @@
 }
 
 /* ==========================================
-   FLOATING BLOBS
+   FLOATING BLOBS & ANIMATIONS
 ========================================== */
 
 .blobs-container{
@@ -398,6 +405,8 @@
 
     right:-120px;
 
+    animation:blobFloat1 14s ease-in-out infinite;
+
 }
 
 .blob-2{
@@ -412,6 +421,18 @@
 
     left:-120px;
 
+    animation:blobFloat2 16s ease-in-out infinite;
+
+}
+
+@keyframes blobFloat1{
+    0%, 100%{ transform:translate(0, 0) scale(1); }
+    50%{ transform:translate(-40px, 50px) scale(1.15); }
+}
+
+@keyframes blobFloat2{
+    0%, 100%{ transform:translate(0, 0) scale(1); }
+    50%{ transform:translate(50px, -40px) scale(1.18); }
 }
 
 /* ==========================================

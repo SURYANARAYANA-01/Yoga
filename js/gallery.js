@@ -1,49 +1,61 @@
 // =============================================================
 // GALLERY.JS — Arivukadal Sky Yoga SPA
-// Category filter for the #gallery section
+// Category filter with smooth scale & fade animation
 // =============================================================
 
 (function () {
     'use strict';
 
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const galleryItems  = document.querySelectorAll('#galleryGrid .gallery-item');
+    function initGallery() {
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const galleryItems  = document.querySelectorAll('#galleryGrid .gallery-item');
 
-    if (!filterButtons.length || !galleryItems.length) return;
+        if (!filterButtons.length || !galleryItems.length) return;
 
-    // --------------------------------------------------------
-    // Filter handler
-    // --------------------------------------------------------
-    function applyFilter (filter) {
-        galleryItems.forEach(function (item) {
-            const category = item.getAttribute('data-category');
-
-            if (filter === 'all' || category === filter) {
-                item.classList.remove('hidden');
-            } else {
-                item.classList.add('hidden');
-            }
+        galleryItems.forEach(function(item) {
+            item.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
         });
+
+        function applyFilter (filter) {
+            galleryItems.forEach(function (item) {
+                const category = item.getAttribute('data-category');
+
+                if (filter === 'all' || category === filter) {
+                    item.style.display = '';
+                    requestAnimationFrame(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'scale(1)';
+                    });
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'scale(0.85)';
+                    setTimeout(() => {
+                        if (item.style.opacity === '0') {
+                            item.style.display = 'none';
+                        }
+                    }, 300);
+                }
+            });
+        }
+
+        filterButtons.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                filterButtons.forEach(function (b) { b.classList.remove('active'); });
+                btn.classList.add('active');
+
+                const filter = btn.getAttribute('data-filter') || 'all';
+                applyFilter(filter);
+            });
+        });
+
+        applyFilter('all');
     }
 
-    // --------------------------------------------------------
-    // Button click handler
-    // --------------------------------------------------------
-    filterButtons.forEach(function (btn) {
-        btn.addEventListener('click', function () {
-            // Update active state
-            filterButtons.forEach(function (b) { b.classList.remove('active'); });
-            btn.classList.add('active');
-
-            // Apply filter
-            const filter = btn.getAttribute('data-filter') || 'all';
-            applyFilter(filter);
-        });
-    });
-
-    // --------------------------------------------------------
-    // Initialise — show all on load
-    // --------------------------------------------------------
-    applyFilter('all');
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initGallery);
+    } else {
+        initGallery();
+    }
+    document.addEventListener('sectionsLoaded', initGallery);
 
 }());
