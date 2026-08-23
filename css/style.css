@@ -174,25 +174,30 @@ section[id]{
 
 }
 .hero {
+    position: relative;
     min-height: 100vh;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(255, 255, 255, 0.90) 0%,
-            rgba(255, 255, 255, 0.82) 25%,
-            rgba(255, 255, 255, 0.55) 42%,
-            rgba(255, 255, 255, 0.12) 62%,
-            rgba(255, 255, 255, 0.00) 75%
-        ),
-        url("../assets/images/yoga-bg.jpeg");
-
+    background-image: url("../assets/images/home background/yoga-bg.jpeg");
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     background-repeat: no-repeat;
-
     display: flex;
     align-items: center;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(10, 25, 40, 0.42) 0%,
+        rgba(10, 25, 40, 0.22) 45%,
+        rgba(10, 25, 40, 0.05) 75%,
+        transparent 100%
+    );
+    z-index: 1;
+    pointer-events: none;
 }
 /* ===================================
    GLASS CARD

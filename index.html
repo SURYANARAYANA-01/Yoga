@@ -233,54 +233,48 @@
                         <h2>Messages from Our Founders</h2>
                     </div>
 
-                    <!-- Founder Message -->
-                    <div class="about-story-grid reverse reveal" style="margin-bottom:60px;">
-                        <div class="about-img-wrap">
-                            <img src="assets/images/Founder.jpeg" alt="Founder — Arivukadal Sky Yoga" class="founder-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                            <div class="about-img-placeholder" style="display:none;">
-                                <span class="ph-icon">🙏</span>
-                                <p>Founder Photo</p>
+                    <div class="leadership-grid reveal">
+                        <!-- Founder Card -->
+                        <div class="leadership-card glass">
+                            <div class="leadership-img-wrap">
+                                <img src="assets/images/client image/Founder.jpeg" alt="Founder — Arivukadal Sky Yoga" class="founder-img founder-portrait" loading="lazy" decoding="async">
+                            </div>
+                            <div class="leadership-content">
+                                <span class="section-eyebrow">Founder</span>
+                                <h3>A Message of Gratitude</h3>
+                                <blockquote class="founder-quote">
+                                    "Yoga is not just about flexibility or posture.
+                                     It is a journey toward understanding yourself and living a meaningful life —
+                                     no matter your age or starting point."
+                                </blockquote>
+                                <p class="founder-name">— Founder, Arivukadal Sky Yoga</p>
+                                <p>
+                                    We welcome every student — a curious child exploring their first sun salutation,
+                                    a busy adult rediscovering their breath, or a senior finding gentle strength —
+                                    as a valued member of our growing family.
+                                </p>
                             </div>
                         </div>
-                        <div class="about-text">
-                            <span class="section-eyebrow">From the Founder</span>
-                            <h2>A Message of Gratitude</h2>
-                            <blockquote class="founder-quote">
-                                "Yoga is not just about flexibility or posture.
-                                 It is a journey toward understanding yourself and living a meaningful life —
-                                 no matter your age or starting point."
-                            </blockquote>
-                            <p class="founder-name">— Founder, Arivukadal Sky Yoga</p>
-                            <p>
-                                We welcome every student — a curious child exploring their first sun salutation,
-                                a busy adult rediscovering their breath, or a senior finding gentle strength —
-                                as a valued member of our growing family.
-                            </p>
-                        </div>
-                    </div>
 
-                    <!-- Co-Founder Message -->
-                    <div class="about-story-grid reveal">
-                        <div class="about-img-wrap">
-                            <img src="assets/images/Co-Founder.jpeg" alt="Co-Founder — Arivukadal Sky Yoga" class="founder-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                            <div class="about-img-placeholder" style="display:none;">
-                                <span class="ph-icon">🪷</span>
-                                <p>Co-Founder Photo</p>
+                        <!-- Co-Founder Card -->
+                        <div class="leadership-card glass">
+                            <div class="leadership-img-wrap">
+                                <img src="assets/images/client image/Co-Founder.jpeg" alt="Co-Founder — Arivukadal Sky Yoga" class="founder-img cofounder-portrait" loading="lazy" decoding="async">
                             </div>
-                        </div>
-                        <div class="about-text">
-                            <span class="section-eyebrow">From the Co-Founder</span>
-                            <h2>Empowering Every Practitioner</h2>
-                            <blockquote class="founder-quote">
-                                "Our vision is to build a nurturing sanctuary where ancient yogic wisdom meets modern lives —
-                                 helping practitioners of all generations cultivate balance, strength, and lifelong peace."
-                            </blockquote>
-                            <p class="founder-name">— Co-Founder, Arivukadal Sky Yoga</p>
-                            <p>
-                                Through structured guidance and personal dedication, we ensure each session supports your unique journey —
-                                building healthy habits for children, stress relief for adults, and gentle vitality for elders.
-                            </p>
-                            <a href="#contact" class="btn" style="margin-top:20px;">Begin Your Journey</a>
+                            <div class="leadership-content">
+                                <span class="section-eyebrow">Co-Founder</span>
+                                <h3>Empowering Every Practitioner</h3>
+                                <blockquote class="founder-quote">
+                                    "Our vision is to build a nurturing sanctuary where ancient yogic wisdom meets modern lives —
+                                     helping practitioners of all generations cultivate balance, strength, and lifelong peace."
+                                </blockquote>
+                                <p class="founder-name">— Co-Founder, Arivukadal Sky Yoga</p>
+                                <p>
+                                    Through structured guidance and personal dedication, we ensure each session supports your unique journey —
+                                    building healthy habits for children, stress relief for adults, and gentle vitality for elders.
+                                </p>
+                                <a href="#contact" class="btn" style="margin-top:20px;">Begin Your Journey</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -590,116 +584,87 @@
         <section id="gallery">
             <div class="container">
 
-                <div class="section-title reveal">
-                    <span>Our Gallery</span>
-                    <h2>Moments of Peace &amp; Wellness</h2>
+                <div class="gallery-intro-box reveal">
+                    <div class="section-title">
+                        <span>Our Gallery</span>
+                        <h2>Moments of Peace &amp; Wellness</h2>
+                    </div>
+                    <p class="gallery-desc">
+                        Explore moments of practice, learning, and celebration across our camps, classes, and special events.
+                    </p>
                 </div>
-                <p class="text-center reveal" style="max-width:620px;margin:0 auto 40px;">
-                    Real photographs will be added here. For now, explore the categories and
-                    imagine the peaceful moments that await you.
-                </p>
 
                 <!-- Filter buttons -->
                 <div class="filter-buttons reveal" role="group" aria-label="Gallery category filters">
-                    <button class="filter-btn active" data-filter="all"         id="filterAll">All</button>
-                    <button class="filter-btn"         data-filter="yoga"       id="filterYoga">Yoga Classes</button>
-                    <button class="filter-btn"         data-filter="meditation" id="filterMed">Meditation</button>
-                    <button class="filter-btn"         data-filter="events"     id="filterEvents">Events</button>
-                    <button class="filter-btn"         data-filter="kids"       id="filterKids">Kids Yoga</button>
-                    <button class="filter-btn"         data-filter="camp"       id="filterCamp">Summer Camp</button>
+                    <button class="filter-btn active" data-filter="all" id="filterAll">All</button>
+                    <button class="filter-btn" data-filter="aaliyaar-camp" id="filterAaliyaarCamp">Aaliyaar Camp</button>
+                    <button class="filter-btn" data-filter="certifications" id="filterCertifications">Certifications</button>
+                    <button class="filter-btn" data-filter="kids-yoga" id="filterKids">Kids Yoga</button>
+                    <button class="filter-btn" data-filter="school-live-class" id="filterSchool">School Live Class</button>
+                    <button class="filter-btn" data-filter="spiritual-class" id="filterSpiritual">Spiritual Class</button>
+                    <button class="filter-btn" data-filter="yoga-day-event" id="filterYogaDay">Yoga Day Event</button>
                 </div>
 
                 <!-- Gallery grid -->
                 <div class="gallery-grid reveal" id="galleryGrid">
 
-                    <div class="gallery-item span-2" data-category="yoga">
-                        <div class="gallery-ph">
-                            <span class="gallery-ph-icon">🧘</span>
-                            <p>Morning Yoga Session</p>
-                            <span class="gallery-label">Yoga Classes</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item span-row" data-category="meditation">
-                        <div class="gallery-ph">
-                            <span class="gallery-ph-icon">🪷</span>
-                            <p>Meditation Circle</p>
-                            <span class="gallery-label">Meditation</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item" data-category="kids">
-                        <div class="gallery-ph">
-                            <span class="gallery-ph-icon">🧒</span>
-                            <p>Kids Practice</p>
-                            <span class="gallery-label">Kids Yoga</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item" data-category="yoga">
-                        <div class="gallery-ph">
-                            <span class="gallery-ph-icon">🌅</span>
-                            <p>Sunrise Suryanamaskar</p>
-                            <span class="gallery-label">Yoga Classes</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item" data-category="events">
-                        <div class="gallery-ph">
-                            <span class="gallery-ph-icon">🎉</span>
-                            <p>Community Event</p>
-                            <span class="gallery-label">Events</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item" data-category="camp">
-                        <div class="gallery-ph">
-                            <span class="gallery-ph-icon">🏕️</span>
-                            <p>Summer Camp 2025</p>
-                            <span class="gallery-label">Summer Camp</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item" data-category="meditation">
-                        <div class="gallery-ph">
-                            <span class="gallery-ph-icon">🌿</span>
-                            <p>Evening Meditation</p>
-                            <span class="gallery-label">Meditation</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item" data-category="kids">
-                        <div class="gallery-ph">
-                            <span class="gallery-ph-icon">🌈</span>
-                            <p>Kids Fun Yoga</p>
-                            <span class="gallery-label">Kids Yoga</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item" data-category="yoga">
-                        <div class="gallery-ph">
-                            <span class="gallery-ph-icon">💪</span>
-                            <p>Strength Poses</p>
-                            <span class="gallery-label">Yoga Classes</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item" data-category="events">
-                        <div class="gallery-ph">
-                            <span class="gallery-ph-icon">🪷</span>
-                            <p>Wellness Workshop</p>
-                            <span class="gallery-label">Events</span>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item" data-category="camp">
-                        <div class="gallery-ph">
-                            <span class="gallery-ph-icon">☀️</span>
-                            <p>Camp Activities</p>
-                            <span class="gallery-label">Summer Camp</span>
-                        </div>
-                    </div>
-
+<div class="gallery-item" data-category="aaliyaar-camp"><img src="assets/images/gallery images/aaliyaar camp/aaliyaar pic.jpeg" alt="aaliyaar camp photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="aaliyaar-camp"><img src="assets/images/gallery images/aaliyaar camp/WhatsApp Image 2026-08-10 at 10.43.38 AM.jpeg" alt="aaliyaar camp photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="aaliyaar-camp"><img src="assets/images/gallery images/aaliyaar camp/WhatsApp Image 2026-08-10 at 10.55.28 AM.jpeg" alt="aaliyaar camp photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="aaliyaar-camp"><img src="assets/images/gallery images/aaliyaar camp/WhatsApp Image 2026-08-10 at 11.01.14 AM (1).jpeg" alt="aaliyaar camp photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="aaliyaar-camp"><img src="assets/images/gallery images/aaliyaar camp/WhatsApp Image 2026-08-10 at 11.01.14 AM (2).jpeg" alt="aaliyaar camp photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="aaliyaar-camp"><img src="assets/images/gallery images/aaliyaar camp/WhatsApp Image 2026-08-10 at 11.01.14 AM (3).jpeg" alt="aaliyaar camp photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="aaliyaar-camp"><img src="assets/images/gallery images/aaliyaar camp/WhatsApp Image 2026-08-10 at 11.01.14 AM.jpeg" alt="aaliyaar camp photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="aaliyaar-camp"><img src="assets/images/gallery images/aaliyaar camp/WhatsApp Image 2026-08-10 at 11.01.15 AM (1).jpeg" alt="aaliyaar camp photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="aaliyaar-camp"><img src="assets/images/gallery images/aaliyaar camp/WhatsApp Image 2026-08-10 at 11.01.15 AM (2).jpeg" alt="aaliyaar camp photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="aaliyaar-camp"><img src="assets/images/gallery images/aaliyaar camp/WhatsApp Image 2026-08-10 at 11.01.15 AM (3).jpeg" alt="aaliyaar camp photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="aaliyaar-camp"><img src="assets/images/gallery images/aaliyaar camp/WhatsApp Image 2026-08-10 at 11.01.15 AM.jpeg" alt="aaliyaar camp photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="certifications"><img src="assets/images/gallery images/certifications/WhatsApp Image 2026-07-31 at 11.39.36 AM.jpeg" alt="certifications photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="certifications"><img src="assets/images/gallery images/certifications/WhatsApp Image 2026-08-08 at 7.15.57 PM.jpeg" alt="certifications photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="certifications"><img src="assets/images/gallery images/certifications/WhatsApp Image 2026-08-08 at 7.15.58 PM (1).jpeg" alt="certifications photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="certifications"><img src="assets/images/gallery images/certifications/WhatsApp Image 2026-08-08 at 7.15.58 PM (2).jpeg" alt="certifications photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="certifications"><img src="assets/images/gallery images/certifications/WhatsApp Image 2026-08-08 at 7.15.58 PM (3).jpeg" alt="certifications photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="certifications"><img src="assets/images/gallery images/certifications/WhatsApp Image 2026-08-08 at 7.15.58 PM.jpeg" alt="certifications photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="certifications"><img src="assets/images/gallery images/certifications/WhatsApp Image 2026-08-10 at 10.50.54 AM.jpeg" alt="certifications photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="certifications"><img src="assets/images/gallery images/certifications/WhatsApp Image 2026-08-10 at 11.03.10 AM (1).jpeg" alt="certifications photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="certifications"><img src="assets/images/gallery images/certifications/WhatsApp Image 2026-08-10 at 11.03.10 AM (2).jpeg" alt="certifications photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="certifications"><img src="assets/images/gallery images/certifications/WhatsApp Image 2026-08-10 at 11.03.10 AM.jpeg" alt="certifications photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="kids-yoga"><img src="assets/images/gallery images/kids yoga/WhatsApp Image 2026-08-10 at 10.46.13 AM (1).jpeg" alt="kids yoga photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="kids-yoga"><img src="assets/images/gallery images/kids yoga/WhatsApp Image 2026-08-10 at 10.46.13 AM (2).jpeg" alt="kids yoga photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="kids-yoga"><img src="assets/images/gallery images/kids yoga/WhatsApp Image 2026-08-10 at 10.46.13 AM (3).jpeg" alt="kids yoga photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="kids-yoga"><img src="assets/images/gallery images/kids yoga/WhatsApp Image 2026-08-10 at 10.46.13 AM (4).jpeg" alt="kids yoga photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="kids-yoga"><img src="assets/images/gallery images/kids yoga/WhatsApp Image 2026-08-10 at 10.46.13 AM.jpeg" alt="kids yoga photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="kids-yoga"><img src="assets/images/gallery images/kids yoga/WhatsApp Image 2026-08-10 at 10.47.37 AM.jpeg" alt="kids yoga photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="kids-yoga"><img src="assets/images/gallery images/kids yoga/WhatsApp Image 2026-08-10 at 10.48.02 AM (1).jpeg" alt="kids yoga photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="kids-yoga"><img src="assets/images/gallery images/kids yoga/WhatsApp Image 2026-08-10 at 10.48.02 AM.jpeg" alt="kids yoga photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="kids-yoga"><img src="assets/images/gallery images/kids yoga/WhatsApp Image 2026-08-10 at 10.48.25 AM.jpeg" alt="kids yoga photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="kids-yoga"><img src="assets/images/gallery images/kids yoga/WhatsApp Image 2026-08-10 at 10.50.08 AM.jpeg" alt="kids yoga photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="kids-yoga"><img src="assets/images/gallery images/kids yoga/WhatsApp Image 2026-08-10 at 10.50.26 AM.jpeg" alt="kids yoga photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="kids-yoga"><img src="assets/images/gallery images/kids yoga/WhatsApp Image 2026-08-10 at 10.50.39 AM.jpeg" alt="kids yoga photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="school-live-class"><img src="assets/images/gallery images/school live class/school event.jpeg" alt="school live class photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="school-live-class"><img src="assets/images/gallery images/school live class/WhatsApp Image 2026-08-10 at 10.56.55 AM.jpeg" alt="school live class photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="school-live-class"><img src="assets/images/gallery images/school live class/WhatsApp Image 2026-08-10 at 10.58.37 AM.jpeg" alt="school live class photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="spiritual-class"><img src="assets/images/gallery images/spritual class/WhatsApp Image 2026-07-31 at 11.39.35 AM.jpeg" alt="spritual class photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="spiritual-class"><img src="assets/images/gallery images/spritual class/WhatsApp Image 2026-07-31 at 11.39.36 AM.jpeg" alt="spritual class photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="spiritual-class"><img src="assets/images/gallery images/spritual class/WhatsApp Image 2026-08-08 at 7.15.59 PM.jpeg" alt="spritual class photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="spiritual-class"><img src="assets/images/gallery images/spritual class/WhatsApp Image 2026-08-10 at 10.47.52 AM.jpeg" alt="spritual class photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="spiritual-class"><img src="assets/images/gallery images/spritual class/WhatsApp Image 2026-08-10 at 10.49.09 AM.jpeg" alt="spritual class photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="yoga-day-event"><img src="assets/images/gallery images/yoga day event/WhatsApp Image 2026-08-08 at 7.15.59 PM (1).jpeg" alt="yoga day event photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="yoga-day-event"><img src="assets/images/gallery images/yoga day event/WhatsApp Image 2026-08-08 at 7.15.59 PM (2).jpeg" alt="yoga day event photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="yoga-day-event"><img src="assets/images/gallery images/yoga day event/WhatsApp Image 2026-08-08 at 7.15.59 PM (3).jpeg" alt="yoga day event photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="yoga-day-event"><img src="assets/images/gallery images/yoga day event/WhatsApp Image 2026-08-08 at 7.16.00 PM (1).jpeg" alt="yoga day event photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="yoga-day-event"><img src="assets/images/gallery images/yoga day event/WhatsApp Image 2026-08-08 at 7.16.00 PM (2).jpeg" alt="yoga day event photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="yoga-day-event"><img src="assets/images/gallery images/yoga day event/WhatsApp Image 2026-08-08 at 7.16.00 PM (3).jpeg" alt="yoga day event photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="yoga-day-event"><img src="assets/images/gallery images/yoga day event/WhatsApp Image 2026-08-08 at 7.16.00 PM.jpeg" alt="yoga day event photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="yoga-day-event"><img src="assets/images/gallery images/yoga day event/WhatsApp Image 2026-08-08 at 7.16.01 PM.jpeg" alt="yoga day event photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="yoga-day-event"><img src="assets/images/gallery images/yoga day event/WhatsApp Image 2026-08-10 at 10.59.34 AM.jpeg" alt="yoga day event photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="yoga-day-event"><img src="assets/images/gallery images/yoga day event/WhatsApp Image 2026-08-10 at 10.59.35 AM (1).jpeg" alt="yoga day event photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="yoga-day-event"><img src="assets/images/gallery images/yoga day event/WhatsApp Image 2026-08-10 at 10.59.35 AM (2).jpeg" alt="yoga day event photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="yoga-day-event"><img src="assets/images/gallery images/yoga day event/WhatsApp Image 2026-08-10 at 10.59.35 AM (3).jpeg" alt="yoga day event photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="yoga-day-event"><img src="assets/images/gallery images/yoga day event/WhatsApp Image 2026-08-10 at 10.59.35 AM.jpeg" alt="yoga day event photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="yoga-day-event"><img src="assets/images/gallery images/yoga day event/WhatsApp Image 2026-08-10 at 10.59.36 AM (1).jpeg" alt="yoga day event photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="yoga-day-event"><img src="assets/images/gallery images/yoga day event/WhatsApp Image 2026-08-10 at 10.59.36 AM.jpeg" alt="yoga day event photo" loading="lazy" decoding="async"></div>
+<div class="gallery-item" data-category="yoga-day-event"><img src="assets/images/gallery images/yoga day event/WhatsApp Image 2026-08-10 at 10.59.55 AM.jpeg" alt="yoga day event photo" loading="lazy" decoding="async"></div>
                 </div>
 
             </div>
