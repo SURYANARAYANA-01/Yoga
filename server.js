@@ -284,6 +284,27 @@ const server = http.createServer(async (req, res) => {
             pathname = '/index.html';
         }
 
+        // Serve Vercel Analytics script from node_modules (local dev)
+        if (pathname === '/_vercel/insights/script.js') {
+            const analyticsScript = path.join(
+                __dirname, 'node_modules', '@vercel', 'analytics', 'dist', 'index.js'
+            );
+            fs.stat(analyticsScript, (err, stats) => {
+                if (err || !stats.isFile()) {
+                    res.writeHead(404, { 'Content-Type': 'text/plain' });
+                    res.end('404 Not Found');
+                    return;
+                }
+                res.writeHead(200, {
+                    'Content-Type': 'application/javascript; charset=utf-8',
+                    'Cache-Control': 'public, max-age=3600'
+                });
+                if (req.method === 'HEAD') { res.end(); return; }
+                fs.createReadStream(analyticsScript).pipe(res);
+            });
+            return;
+        }
+
         // Prevent directory traversal
         const safePath = path.normalize(path.join(__dirname, pathname));
         if (!safePath.startsWith(__dirname)) {
