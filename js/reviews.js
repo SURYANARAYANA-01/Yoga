@@ -7,10 +7,10 @@
     'use strict';
 
     // -------------------------------------------------------
-    // ⚠️  REPLACE THESE TWO VALUES BEFORE GOING LIVE ⚠️
+    // Supabase Credentials
     // -------------------------------------------------------
-    const SUPABASE_URL      = 'YOUR_SUPABASE_PROJECT_URL';
-    const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
+    const SUPABASE_URL      = window.SUPABASE_URL || 'https://vwifxaufztllmwggbyil.supabase.co';
+    const SUPABASE_ANON_KEY = window.SUPABASE_KEY || 'sb_publishable_3hptE6qzba565zpEuZv29w_gnr25Vb7';
     // -------------------------------------------------------
 
     // -------------------------------------------------------
@@ -59,13 +59,8 @@
     // -------------------------------------------------------
     // Supabase client init
     // -------------------------------------------------------
-    const credsReady = (
-        SUPABASE_URL      !== 'YOUR_SUPABASE_PROJECT_URL' &&
-        SUPABASE_ANON_KEY !== 'YOUR_SUPABASE_ANON_KEY'
-    );
-
-    let supabase = null;
-    if (credsReady && typeof window.supabase !== 'undefined') {
+    let supabase = window.supabaseClient;
+    if (!supabase && typeof window.supabase !== 'undefined' && window.supabase.createClient) {
         supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
     }
 

@@ -64,18 +64,25 @@
     }
 
     // --------------------------------------------------------
-    // Contact form submit → WhatsApp redirect
+    // Contact form submit → Save to Supabase & WhatsApp redirect
     // --------------------------------------------------------
     if (!contactForm) return;
 
-    contactForm.addEventListener('submit', function (e) {
+    contactForm.addEventListener('submit', async function (e) {
         e.preventDefault();
 
-        const name    = (document.getElementById('contactName')    || {}).value || '';
-        const phone   = (document.getElementById('contactPhone')   || {}).value || '';
-        const email   = (document.getElementById('contactEmail')   || {}).value || '';
-        const subject = (document.getElementById('contactSubject') || {}).value || '';
-        const message = (document.getElementById('contactMessage') || {}).value || '';
+        const nameEl    = document.getElementById('contactName');
+        const phoneEl   = document.getElementById('contactPhone');
+        const emailEl   = document.getElementById('contactEmail');
+        const subjectEl = document.getElementById('contactSubject');
+        const messageEl = document.getElementById('contactMessage');
+        const sendBtn   = document.getElementById('contactSendBtn');
+
+        const name    = (nameEl    || {}).value || '';
+        const phone   = (phoneEl   || {}).value || '';
+        const email   = (emailEl   || {}).value || '';
+        const subject = (subjectEl || {}).value || '';
+        const message = (messageEl || {}).value || '';
 
         // Basic validation
         if (
@@ -97,6 +104,39 @@
         const recipientName = (recipientCofounder && recipientCofounder.checked)
             ? 'Co-Founder'
             : 'Founder';
+
+        // Save submission to Supabase
+        const client = window.supabaseClient || (typeof supabase !== 'undefined' && supabase.createClient ? supabase.createClient(window.SUPABASE_URL, window.SUPABASE_KEY) : null);
+        if (client) {
+            if (sendBtn) {
+                sendBtn.disabled = true;
+                sendBtn.innerHTML = '<span>⏳</span> Sending...';
+            }
+            try {
+                const { error } = await client
+                    .from('contact_submissions')
+                    .insert([
+                        {
+                            name: name.trim(),
+                            phone: phone.trim(),
+                            email: email.trim(),
+                            subject: subject.trim(),
+                            message: message.trim(),
+                            recipient: recipientName
+                        }
+                    ]);
+                if (error) {
+                    console.warn('Supabase contact submission notice:', error.message);
+                }
+            } catch (err) {
+                console.warn('Supabase contact insert error:', err);
+            } finally {
+                if (sendBtn) {
+                    sendBtn.disabled = false;
+                    sendBtn.innerHTML = '<span>💬</span> Send via WhatsApp';
+                }
+            }
+        }
 
         // Build formatted WhatsApp message
         const waMessage = [
