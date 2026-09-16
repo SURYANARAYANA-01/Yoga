@@ -106,9 +106,7 @@
             : 'Founder';
 
         // Save submission to Neon PostgreSQL via backend API
-        const API_BASE = (window.location.protocol === 'http:' || window.location.protocol === 'https:') && window.location.port === '3000'
-            ? ''
-            : 'http://localhost:3000';
+        const API_BASE = '';
 
         if (sendBtn) {
             sendBtn.disabled = true;

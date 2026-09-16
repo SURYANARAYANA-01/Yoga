@@ -286,11 +286,9 @@
     }
 
     // -------------------------------------------------------
-    // API Base URL (auto-detects port 3000 or Live Server / file)
+    // API Base URL — uses relative paths (works on localhost:3000 AND Vercel)
     // -------------------------------------------------------
-    const API_BASE = (window.location.protocol === 'http:' || window.location.protocol === 'https:') && window.location.port === '3000'
-        ? ''
-        : 'http://localhost:3000';
+    const API_BASE = '';
 
     // -------------------------------------------------------
     // Fetch Reviews from Backend API (Neon PostgreSQL)
@@ -328,7 +326,7 @@
             if (reviewsErrorState) {
                 const errText = reviewsErrorState.querySelector('#reviewsErrorText');
                 if (errText) {
-                    errText.textContent = 'Could not connect to server. Please ensure npm start is running on http://localhost:3000';
+                    errText.textContent = 'Could not load reviews right now. Please refresh the page.';
                 }
                 reviewsErrorState.style.display = 'block';
             }
@@ -420,11 +418,10 @@
                     submitBtn.textContent = 'Submit Review';
                 }
                 if (formError) {
-                    let detail = err && (err.message || (typeof err === 'string' ? err : ''));
-                    if (detail.includes('Failed to fetch') || detail.includes('NetworkError')) {
-                        detail = 'Could not connect to backend server. Please run "npm start" and visit http://localhost:3000';
-                    }
-                    formError.textContent = `Failed to submit review: ${detail}`;
+                    const detail = err && (err.message || (typeof err === 'string' ? err : ''));
+                    formError.textContent = detail
+                        ? `Failed to submit review: ${detail}`
+                        : 'Failed to submit review. Please try again.';
                     formError.classList.add('show');
                 }
             }
