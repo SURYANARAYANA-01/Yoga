@@ -1,17 +1,10 @@
 // =============================================================
 // REVIEWS.JS — Arivukadal Sky Yoga
-// Supabase client-side reviews + dynamic rating stats + modal form
+// Neon PostgreSQL client-side reviews + dynamic rating stats + modal form
 // =============================================================
 
 (function () {
     'use strict';
-
-    // -------------------------------------------------------
-    // Supabase Credentials
-    // -------------------------------------------------------
-    const SUPABASE_URL      = window.SUPABASE_URL || 'https://vwifxaufztllmwggbyil.supabase.co';
-    const SUPABASE_ANON_KEY = window.SUPABASE_KEY || 'sb_publishable_3hptE6qzba565zpEuZv29w_gnr25Vb7';
-    // -------------------------------------------------------
 
     // -------------------------------------------------------
     // DOM elements
@@ -55,14 +48,6 @@
 
     // Exit early if the reviews section isn't present
     if (!reviewsGrid) return;
-
-    // -------------------------------------------------------
-    // Supabase client init
-    // -------------------------------------------------------
-    let supabase = window.supabaseClient;
-    if (!supabase && typeof window.supabase !== 'undefined' && window.supabase.createClient) {
-        supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-    }
 
     // -------------------------------------------------------
     // Modal Open / Close Logic
@@ -212,7 +197,7 @@
         if (!reviews || reviews.length === 0) {
             if (ratingTier) ratingTier.textContent = 'Welcome';
             if (summaryAvg)  summaryAvg.textContent = '5.0';
-            if (summaryCountText) summaryCountText.textContent = 'Be the first one to write a review!';
+            if (summaryCountText) summaryCountText.textContent = 'Write a review to see it.';
             if (summaryStarsFg) summaryStarsFg.style.width = '100%';
             ratingSummaryBar.style.display = 'flex';
             return;
@@ -301,7 +286,14 @@
     }
 
     // -------------------------------------------------------
-    // Fetch Reviews from Supabase
+    // API Base URL (auto-detects port 3000 or Live Server / file)
+    // -------------------------------------------------------
+    const API_BASE = (window.location.protocol === 'http:' || window.location.protocol === 'https:') && window.location.port === '3000'
+        ? ''
+        : 'http://localhost:3000';
+
+    // -------------------------------------------------------
+    // Fetch Reviews from Backend API (Neon PostgreSQL)
     // -------------------------------------------------------
     async function loadReviews() {
         updateSummaryBar([]); // Ensure summary bar is visible immediately
@@ -310,35 +302,23 @@
         if (reviewsErrorState) reviewsErrorState.style.display = 'none';
         if (reviewsGrid) reviewsGrid.style.display = 'none';
 
-        if (!supabase) {
-            if (reviewsLoading) reviewsLoading.style.display = 'none';
-            if (!credsReady) {
-                if (reviewsErrorState) {
-                    const errText = reviewsErrorState.querySelector('#reviewsErrorText');
-                    if (errText) errText.innerHTML = '⚙️ Reviews will appear here once Supabase credentials are configured in <code>js/reviews.js</code>.';
-                    reviewsErrorState.style.display = 'block';
-                }
-            } else {
-                if (reviewsErrorState) {
-                    const errText = reviewsErrorState.querySelector('#reviewsErrorText');
-                    if (errText) errText.textContent = 'Could not connect to database.';
-                    reviewsErrorState.style.display = 'block';
-                }
-            }
-            return;
-        }
-
         try {
-            const { data, error } = await supabase
-                .from('reviews')
-                .select('id, name, rating, comment, created_at')
-                .order('created_at', { ascending: false });
+            const response = await fetch(`${API_BASE}/api/reviews`);
+            let result = null;
+            try {
+                result = await response.json();
+            } catch (jsonErr) {
+                // Non-JSON response
+            }
 
-            if (error) throw error;
+            if (!response.ok || !result || !result.ok) {
+                const msg = result?.error || `HTTP ${response.status}`;
+                throw new Error(msg);
+            }
 
             if (reviewsLoading) reviewsLoading.style.display = 'none';
 
-            allReviews = data || [];
+            allReviews = result.data || [];
             updateSummaryBar(allReviews);
             renderGrid(allReviews);
 
@@ -347,7 +327,9 @@
             if (reviewsLoading) reviewsLoading.style.display = 'none';
             if (reviewsErrorState) {
                 const errText = reviewsErrorState.querySelector('#reviewsErrorText');
-                if (errText) errText.textContent = 'Could not load reviews right now. Please refresh the page.';
+                if (errText) {
+                    errText.textContent = 'Could not connect to server. Please ensure npm start is running on http://localhost:3000';
+                }
                 reviewsErrorState.style.display = 'block';
             }
         }
@@ -388,41 +370,41 @@
                 submitBtn.textContent = 'Submitting…';
             }
 
-            if (!supabase) {
-                if (submitBtn) {
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = 'Submit Review';
-                }
-                if (formError) {
-                    formError.textContent = '⚙️ Supabase credentials not configured in js/reviews.js yet.';
-                    formError.classList.add('show');
-                }
-                return;
-            }
-
             try {
-                const { data, error } = await supabase
-                    .from('reviews')
-                    .insert([{ name, rating, comment }])
-                    .select()
-                    .single();
+                const response = await fetch(`${API_BASE}/api/reviews`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ name, rating, comment })
+                });
 
-                if (error) throw error;
+                let result = null;
+                try {
+                    result = await response.json();
+                } catch (jsonErr) {
+                    // Non-JSON response
+                }
+
+                if (!response.ok || !result || !result.ok) {
+                    const msg = result?.error || (response.status === 404 ? 'Backend API route not found on this port.' : `Failed to submit review (HTTP ${response.status})`);
+                    throw new Error(msg);
+                }
+
+                const inserted = result.data || {
+                    id: Date.now(),
+                    name,
+                    rating,
+                    comment,
+                    created_at: new Date().toISOString()
+                };
 
                 // Show success view inside modal
                 if (reviewForm) reviewForm.style.display = 'none';
                 if (reviewSuccessMsg) reviewSuccessMsg.style.display = 'flex';
 
                 // Prepend new review to state
-                const newReview = {
-                    id: data.id || Date.now(),
-                    name,
-                    rating,
-                    comment,
-                    created_at: data.created_at || new Date().toISOString()
-                };
-
-                allReviews.unshift(newReview);
+                allReviews.unshift(inserted);
                 updateSummaryBar(allReviews);
                 renderGrid(allReviews);
 
@@ -438,7 +420,11 @@
                     submitBtn.textContent = 'Submit Review';
                 }
                 if (formError) {
-                    formError.textContent = 'Failed to submit review. Please try again.';
+                    let detail = err && (err.message || (typeof err === 'string' ? err : ''));
+                    if (detail.includes('Failed to fetch') || detail.includes('NetworkError')) {
+                        detail = 'Could not connect to backend server. Please run "npm start" and visit http://localhost:3000';
+                    }
+                    formError.textContent = `Failed to submit review: ${detail}`;
                     formError.classList.add('show');
                 }
             }

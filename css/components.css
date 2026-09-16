@@ -84,11 +84,15 @@
     background:rgba(0,0,0,.45);
     z-index:999;
     opacity:0;
-    transition:.3s;
+    visibility:hidden;
+    pointer-events:none;
+    transition:opacity .3s ease, visibility .3s ease;
 }
 
 .nav-overlay.open{
     opacity:1;
+    visibility:visible;
+    pointer-events:auto;
 }
 .logo {
     display: flex;

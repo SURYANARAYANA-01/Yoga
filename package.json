@@ -1,0 +1,20 @@
+{
+  "name": "arivukadal-sky-yoga",
+  "version": "1.0.0",
+  "description": "Arivukadal Sky Yoga Website & Backend Server",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "yoga",
+    "arivukadal",
+    "neon"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}

@@ -126,6 +126,8 @@ section[id]{
     color:#fff;
 
     cursor:pointer;
+    touch-action:manipulation;
+    -webkit-tap-highlight-color:transparent;
 
     transition:var(--transition);
 

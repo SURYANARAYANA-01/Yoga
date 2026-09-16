@@ -857,13 +857,13 @@
                 <!-- ── Empty state (zero reviews) ── -->
                 <div class="reviews-empty-state" id="reviewsEmptyState" style="display:none;">
                     <span class="empty-state-icon">🌟</span>
-                    <h3>No reviews yet — be the first!</h3>
-                    <p>Be the first to share your experience at Arivukadal Sky Yoga.</p>
+                    <h3>Write a review to see it.</h3>
+                    <p>Be the first to share your experience with Arivukadal Sky Yoga.</p>
                 </div>
 
-                <!-- ── Error / No Credentials state ── -->
+                <!-- ── Error / Offline state ── -->
                 <div class="reviews-error-state" id="reviewsErrorState" style="display:none;">
-                    <p id="reviewsErrorText">⚙️ Reviews will appear here once Supabase credentials are configured.</p>
+                    <p id="reviewsErrorText">⚙️ Reviews will appear here once connected to the server.</p>
                 </div>
 
                 <!-- ── 4-column review cards grid ── -->
@@ -1156,9 +1156,11 @@
         </div>
     </footer>
 
-    <!-- Supabase JS (CDN) -->
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="js/supabase.js"></script>
+    <!-- Vercel Web Analytics -->
+    <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
 
     <!-- Scripts -->
     <script src="js/main.js"></script>

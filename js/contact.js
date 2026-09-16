@@ -105,36 +105,37 @@
             ? 'Co-Founder'
             : 'Founder';
 
-        // Save submission to Supabase
-        const client = window.supabaseClient || (typeof supabase !== 'undefined' && supabase.createClient ? supabase.createClient(window.SUPABASE_URL, window.SUPABASE_KEY) : null);
-        if (client) {
+        // Save submission to Neon PostgreSQL via backend API
+        const API_BASE = (window.location.protocol === 'http:' || window.location.protocol === 'https:') && window.location.port === '3000'
+            ? ''
+            : 'http://localhost:3000';
+
+        if (sendBtn) {
+            sendBtn.disabled = true;
+            sendBtn.innerHTML = '<span>⏳</span> Sending...';
+        }
+
+        try {
+            await fetch(`${API_BASE}/api/contact`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: name.trim(),
+                    phone: phone.trim(),
+                    email: email.trim(),
+                    subject: subject.trim(),
+                    message: message.trim(),
+                    recipient: recipientName
+                })
+            });
+        } catch (err) {
+            console.warn('Backend contact submission error:', err);
+        } finally {
             if (sendBtn) {
-                sendBtn.disabled = true;
-                sendBtn.innerHTML = '<span>⏳</span> Sending...';
-            }
-            try {
-                const { error } = await client
-                    .from('contact_submissions')
-                    .insert([
-                        {
-                            name: name.trim(),
-                            phone: phone.trim(),
-                            email: email.trim(),
-                            subject: subject.trim(),
-                            message: message.trim(),
-                            recipient: recipientName
-                        }
-                    ]);
-                if (error) {
-                    console.warn('Supabase contact submission notice:', error.message);
-                }
-            } catch (err) {
-                console.warn('Supabase contact insert error:', err);
-            } finally {
-                if (sendBtn) {
-                    sendBtn.disabled = false;
-                    sendBtn.innerHTML = '<span>💬</span> Send via WhatsApp';
-                }
+                sendBtn.disabled = false;
+                sendBtn.innerHTML = '<span>💬</span> Send via WhatsApp';
             }
         }
 
