@@ -15,7 +15,13 @@ module.exports = async function handler(req, res) {
     }
 
     const DATABASE_URL = process.env.DATABASE_URL || 'postgresql://neondb_owner:npg_nxKGALJYgC83@ep-summer-credit-a5tzhrjm-pooler.us-east-2.aws.neon.tech/neondb?sslmode=require';
-    const host = 'ep-summer-credit-a5tzhrjm-pooler.us-east-2.aws.neon.tech';
+    let host = 'ep-summer-credit-a5tzhrjm-pooler.us-east-2.aws.neon.tech';
+    try {
+        if (DATABASE_URL) {
+            const u = new URL(DATABASE_URL);
+            host = u.hostname;
+        }
+    } catch (e) {}
     const endpoint = `https://${host}/sql`;
 
     async function queryNeon(query, params = []) {
