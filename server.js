@@ -27,10 +27,10 @@ if (fs.existsSync(envPath)) {
 }
 
 const PORT = parseInt(process.env.PORT, 10) || 3000;
-const DATABASE_URL = process.env.DATABASE_URL || '';
+const DATABASE_URL = process.env.DATABASE_URL || 'postgresql://neondb_owner:npg_nxKGALJYgC83@ep-summer-credit-a5tzhrjm-pooler.us-east-2.aws.neon.tech/neondb?sslmode=require';
 
 // Parse host from DATABASE_URL
-let NEON_HOST = '';
+let NEON_HOST = 'ep-summer-credit-a5tzhrjm-pooler.us-east-2.aws.neon.tech';
 try {
     if (DATABASE_URL) {
         const parsed = new URL(DATABASE_URL);
