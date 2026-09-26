@@ -178,9 +178,12 @@ section[id]{
 .hero {
     position: relative;
     min-height: 100vh;
+    min-height: 100dvh; /* dynamic viewport height — accounts for mobile browser chrome */
     background-image: url("../assets/images/home background/yoga-bg.jpeg");
     background-size: cover;
+    -webkit-background-size: cover;
     background-position: center center;
+    background-attachment: scroll; /* never 'fixed' — iOS Safari breaks fixed on non-body elements */
     background-repeat: no-repeat;
     display: flex;
     align-items: center;

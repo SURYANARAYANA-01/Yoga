@@ -154,7 +154,11 @@
     /* ---- HERO ---- */
 
     .hero{
-        background-position:center 20%;
+        min-height: 100svh; /* safe-area-aware on iOS Safari */
+        min-height: 100dvh;
+        background-position: center top;   /* keep top of image (sky/model head) visible */
+        background-size: cover;
+        background-attachment: scroll;
     }
 
     .hero::before{
@@ -296,6 +300,14 @@
     .nav-links{ width:100%; }
 
     /* Hero */
+    .hero{
+        min-height: 100svh;
+        min-height: 100dvh;
+        background-position: center top;
+        background-size: cover;
+        background-attachment: scroll;
+    }
+
     .btn, .btn-outline{
         padding:12px 24px;
         font-size:.9rem;
