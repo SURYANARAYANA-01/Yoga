@@ -1652,27 +1652,39 @@ body.lightbox-open{
     margin-top:0;
 }
 
-/* Read More — now a <button> */
+/* Read More — styled as text link, not a default browser button */
 .blog-read-more{
-    display:inline-flex;
-    align-items:center;
-    gap:6px;
-    color:var(--primary-dark);
-    font-weight:600;
-    font-size:.88rem;
-    margin-top:16px;
-    transition:gap .25s, color .25s;
-    background:none;
-    border:none;
-    padding:0;
-    cursor:pointer;
-    font-family:inherit;
+    /* full browser reset */
+    -webkit-appearance: none;
+    appearance: none;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none;
+    padding: 0 !important;
+    margin-top: 16px;
+    width: auto;           /* prevent stretching full column width */
+    align-self: flex-start;/* left-align inside flex column */
+
+    /* visual style */
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--primary-dark);
+    font-weight: 600;
+    font-size: .88rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: gap .25s, color .25s;
+    text-decoration: none;
 }
 
 .blog-read-more:hover{
-    gap:10px;
-    color:var(--secondary);
+    gap: 10px;
+    color: var(--secondary);
+    background: none !important;
 }
+
 
 /* =====================================================
    BLOG MODAL
