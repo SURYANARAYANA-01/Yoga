@@ -16,7 +16,7 @@ module.exports = async function handler(req, res) {
         return res.status(405).json({ ok: false, error: 'Method not allowed' });
     }
 
-    const DATABASE_URL = process.env.DATABASE_URL || 'postgresql://neondb_owner:npg_nxKGALJYgC83@ep-summer-credit-a5tzhrjm-pooler.us-east-2.aws.neon.tech/neondb?sslmode=require';
+    const DATABASE_URL = process.env.DATABASE_URL;
     let host = 'ep-summer-credit-a5tzhrjm-pooler.us-east-2.aws.neon.tech';
     try {
         if (DATABASE_URL) {
